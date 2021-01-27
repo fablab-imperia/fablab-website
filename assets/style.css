@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans&display=swap');
+
 
 
 :root {
-    --primary-color: #0066FF;
+    --primary-color: #FFFFFF;
+    --second-color: #30DAF1;
+    --third-color: #FDA460;
+    --background-color: #0060B9;
 
 }
 
@@ -59,7 +63,7 @@ body {
     box-sizing: border-box;
     font-family: 'Exo', sans-serif;
     line-height: 1.6;
-    color: rgb(255, 255, 255)
+    color: var(--background-color);
 }
 
 ul {
@@ -71,15 +75,12 @@ ul {
 
 a  {
     text-decoration: none;
-    color: rgb(163, 255, 144);
 }
 
 h1, h2 {
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.2;
     margin: 5px 0;
-    color:rgb(144, 233, 255);
-    text-shadow: 3px 3px 6px #4E4E4E;
 }
 
 p {
@@ -94,9 +95,13 @@ img {
 /* Navbar */
 
 .navbar {
-    background-color: var(--primary-color);
-    color: darkslategrey;
+    width: 100%;
+    font-family: "Open Sans";
+    background: rgba(0, 96, 185, 0.42);
     height: 90px;
+    z-index: 1;
+    position: fixed;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .navbar ul {
@@ -104,13 +109,13 @@ img {
 }
 
 .navbar ul a {
-    color: #fff;
+    color: var(--primary-color);
     padding: 10px;
     margin: 0 15px;
 }
 
 .navbar ul a:hover {
-    border-bottom: 2px #fff solid;
+    border-bottom: 2px var(--primary-color) solid;
 }
 
 .navbar .flex {
@@ -128,12 +133,13 @@ img {
 /* Section-1 */
 
 .cover {
-    height: 500px;
+    height: 700px;
     background-color: var(--primary-color);
     background-image: url("imgs/IMG_2557.JPG");
     background-size: cover;
     background-position-y:65%;
     position: relative;
+    z-index: 0;
 }
 
 .cover .title {     
@@ -143,14 +149,14 @@ img {
     font-size: 80px;
     line-height: 75px;
     letter-spacing: 0.02em;
-    color: #FFFFFF;
+    color: var(--primary-color);
     justify-self: right;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     
 }
 
 .cover .title .lab {
-    color: #FDA460;
+    color: var(--third-color);
 }
 
 .cover .title .imperia {
@@ -168,7 +174,7 @@ img {
     position: relative;
     left: 100px;
 
-    color: #30DAF1;
+    color: var(--second-color);
 }
 
 /* .cover p{
@@ -186,9 +192,9 @@ img {
     justify-self: flex-end;
 }
 
-.cover-bubble h2 {
+/* .cover-bubble h2 {
     color: var(--primary-color);
-}
+} */
 
 .cover::before, .cover::after {
     content: "";
@@ -197,7 +203,7 @@ img {
     bottom: -70px;
     right: 0;
     left: 0;
-    background: #fff;
+    /* background: #fff; */
     transform: skewY(-2deg);
     -webkit-transform: skewY(-2deg);
     -moz-transform: skewY(-2deg);
