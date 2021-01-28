@@ -6,11 +6,12 @@
     --primary-color: #FFFFFF;
     --second-color: #30DAF1;
     --third-color: #FDA460;
-    --background-color: #0060B9;
+    --background-color: rg(0, 96, 185);
+    --background-semitransp-color: rgba(0, 96, 185, 0.42);
 
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -24,8 +25,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -36,7 +37,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -63,7 +64,8 @@ body {
     box-sizing: border-box;
     font-family: 'Exo', sans-serif;
     line-height: 1.6;
-    color: var(--background-color);
+    color: var(--primary-color);
+    background: linear-gradient(180deg, #0053B1 -2.22%, #002988 97.78%);
 }
 
 ul {
@@ -95,27 +97,37 @@ img {
 /* Navbar */
 
 .navbar {
-    width: 100%;
-    font-family: "Open Sans";
-    background: rgba(0, 96, 185, 0.42);
-    height: 90px;
-    z-index: 1;
     position: fixed;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 90px;
+    background: var(--background-semitransp-color);
+    font-family: "Open Sans";
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+    z-index: 1;
 }
 
 .navbar ul {
     display: flex;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
 }
 
 .navbar ul a {
     color: var(--primary-color);
-    padding: 10px;
-    margin: 0 15px;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    height: 100%;
+    padding: 55px 20px 25px 20px;
+    margin: 15px;
 }
 
 .navbar ul a:hover {
-    border-bottom: 2px var(--primary-color) solid;
+    /* border-bottom: 2px var(--primary-color) solid; */
+    background: linear-gradient(180.55deg, #30DAF1 0.48%, #559FFE 99.52%);
+    border-radius: 0px 0px 15px 10px;
 }
 
 .navbar .flex {
@@ -125,6 +137,7 @@ img {
 
 .navbar img {
     height:70px;
+    padding-top: 5px;
     width: auto;
     align-content:center;
 
@@ -134,15 +147,20 @@ img {
 
 .cover {
     height: 700px;
-    background-color: var(--primary-color);
-    background-image: url("imgs/IMG_2557.JPG");
+    background: linear-gradient(93.83deg,
+        rgba(0, 0, 0, 0.37) 31.45%,
+        rgba(132, 132, 132, 0.12081) 64.68%,
+        rgba(255, 255, 255, 0) 86.24%),
+        url("imgs/IMG_2557.JPG");
+    filter: drop-shadow(0px 4px 60px rgba(0, 0, 0, 0.25));
     background-size: cover;
     background-position-y:65%;
     position: relative;
     z-index: 0;
+    text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
 }
 
-.cover .title {     
+.cover .title {
     font-family: Exo;
     font-style: normal;
     font-weight: 900;
@@ -151,8 +169,8 @@ img {
     letter-spacing: 0.02em;
     color: var(--primary-color);
     justify-self: right;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
+
+
 }
 
 .cover .title .lab {
@@ -173,42 +191,26 @@ img {
     letter-spacing: 0.07em;
     position: relative;
     left: 100px;
-
     color: var(--second-color);
+}
+
+.cover .txt {
+    position: relative;
+    top: 50px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 23px;
+    padding-bottom: 20px;
+    border-bottom: var(--second-color) solid 1px;  /* TODO shorten line lenght */
+
 }
 
 /* .cover p{
     margin: 20px;
 } */
 
-.cover-bubble {
-    background-color: #ffffff90;
-    position: relative;
-    top: 60px;
-    height: 200px;
-    width: 350px;
-    padding: 40px;
-    z-index: 100;
-    justify-self: flex-end;
-}
-
-/* .cover-bubble h2 {
-    color: var(--primary-color);
-} */
-
-.cover::before, .cover::after {
-    content: "";
-    position: absolute;
-    height: 100px;
-    bottom: -70px;
-    right: 0;
-    left: 0;
-    /* background: #fff; */
-    transform: skewY(-2deg);
-    -webkit-transform: skewY(-2deg);
-    -moz-transform: skewY(-2deg);
-    -ms-transform: skewY(-2deg);
-}
 
 /* Stats */
 

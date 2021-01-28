@@ -37,15 +37,6 @@
     transform: scale(0.98);
 }
 
-.text-center {
-    text-align: center;
-}
-
-.bg-dark {
-    background-color: rgb(0, 6, 63);
-    color: cornflowerblue;
-}
-
 .flex {
     display: flex;
     height: 100%;
