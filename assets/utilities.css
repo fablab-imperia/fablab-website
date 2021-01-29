@@ -5,38 +5,6 @@
     padding: 0 20px;
 }
 
-.card   {
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-    padding: 20px;
-    margin: 10px;
-    color: #444;
-}
-
-.card h1,h2 {
-    color: #444;
-}
-
-.btn {
-    display:inline-block;
-    padding: 10px 30px;
-    cursor: pointer;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
-
-.btn-outline {
-    background-color: transparent;
-    border: 1px #fff solid;
-}
-
-.btn:hover {
-    transform: scale(0.98);
-}
-
 .flex {
     display: flex;
     height: 100%;
@@ -143,4 +111,13 @@
 
 .p-5 {
     padding: 4rem;
+}
+
+.card   {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    padding: 20px;
+    margin: 10px;
+    color: #444;
 }
