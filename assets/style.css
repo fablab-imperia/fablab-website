@@ -118,6 +118,19 @@ button:hover {
 
 }
 
+h2 {
+    font-family: Exo;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 39px;
+    line-height: 52px;
+
+    /* identical to box height */
+    letter-spacing: 0.02em;
+
+    color: var(--primary-color);
+}
+
 
 
 /* Navbar */
@@ -126,12 +139,15 @@ button:hover {
     position: fixed;
     width: 100%;
     height: 90px;
+    overflow: hidden;
     background: var(--background-semitransp-color);
     font-family: "Open Sans";
 
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
     z-index: 1;
 }
+
+
 
 .navbar ul {
     display: flex;
@@ -175,6 +191,7 @@ button:hover {
 /* Section-1 */
 
 .cover {
+    position: relative;
     height: 600px;
     background: linear-gradient(93.83deg,
         rgba(0, 0, 0, 0.37) 31.45%,
@@ -184,7 +201,6 @@ button:hover {
     filter: drop-shadow(0px 4px 60px rgba(0, 0, 0, 0.25));
     background-size: cover;
     background-position-y: 65%;
-    position: relative;
     z-index: 0;
     text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
 }
@@ -262,14 +278,18 @@ button:hover {
 /* Summary */
 
 .summary {
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    align-content: stretch;
+    top: 10px;
     width: var(--max-width);
     align-items: start;
     margin: 0 auto;
     overflow: hidden;
-    height: 800px;
+    height: 630px;
     font-family: "Open Sans";
     z-index: 0;
+
 }
 
 .summary .title {
@@ -282,40 +302,149 @@ button:hover {
     text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
     color: var(--primary-color);
 }
+/* margin: auto; 
+} */
 
-.summary figure{
+.summary img{
     position: relative;
-    top: 40px;
-    width:300px;
-    margin:0 auto;    
-}
-
-.summary figure img{
+    top: 100px;
     box-shadow: 0px 0px 20px rgba(107, 219, 255, 0.85);
     border-radius: 10px;
-    display:block; 
-    height: auto;
-    width:100%; 
-
+    max-width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    
 }
 
 .summary .grid  {
-    align-items: start;
-    gap: 50px;
-    max-width: 100%;
-    padding: 50px 0 0 0
+    position: relative;
+    top: 20px;
+    gap: 60px;
+    padding: 50px 0 0 0;
+   
 }
 
 .summary .card {
     background-color: transparent;
+    border-radius: 15px;
     text-align: center;
+    font-size: 19px;
+    padding: 10px;
+    line-height: 25px;
+    transition: 0.15s;
+    cursor: pointer;
+}
+
+.summary .card:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 1;
+}
+
+.summary .card:active {
+    background-color: rgba(83, 243, 203, 0.637);
+    opacity: 1;
 }
 
 .summary .icons {
     color: var(--second-color);
     font-size: 50px;
+    padding-bottom: 10px;
 }
 
+.summary .quote {
+    position: relative;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
 
+    font-family: Exo;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.07em;
+    color: var(--third-color);
+}
+
+.summary .quote .signature {
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 40px;
+}
+
+/* Courses */
+
+.courses {
+    background: linear-gradient(303.17deg, 
+                rgba(0, 63, 150, 0.72) -0.7%,
+                rgba(0, 75, 203, 0.9) 49.72%,
+                #001767 98.47%), url("imgs/IMG_7664.JPG");
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.25);
+    background-size: cover;
+    background-position-y: 70%;
+    height: 600px;
+}
+
+.courses .grid {
+    grid-template-columns: 3fr 1fr;
+    width: var(--max-width)
+    
+}
+
+.courses .card {
+    position: relative;
+    left: 20px;
+    /* TODO border-bottom: 1px solid var(--third-color); */
+}
+
+.courses .card p {
+    position: relative;
+    left: 20px;
+    margin-right: 250px;
+}
+
+.courses h2 {
+    position:relative;
+    padding-top: 40px;
+
+}
+
+.courses h3 {
+    position:relative;
+    padding-top: 10px;
+    font-size: 25px;
+    color:var(--third-color);
+}
+
+.courses img{
+    position: relative;
+    box-shadow: 0px 0px 20px rgba(107, 219, 255, 0.85);
+    border-radius: 10px;
+    /* margin: 20px; */
+    width: auto;
+    max-height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.courses ol{
+    margin-top: 170px;
+    list-style: none;
+    width:100%;
+}
+.courses ol li{
+    background: var(--second-color);
+    border-radius: 50%;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    cursor: pointer;
+    margin: 5px;
+}
 
 /* Footer */
