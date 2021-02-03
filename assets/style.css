@@ -124,14 +124,19 @@ h2 {
     font-weight: 900;
     font-size: 39px;
     line-height: 52px;
-
-    /* identical to box height */
     letter-spacing: 0.02em;
 
     color: var(--primary-color);
 }
 
-
+.alert-box {
+    padding: 5px 10px;
+    margin: 20px 0px;
+    background-color: #ff1100a2;
+    border: 1px solid yellow;
+    color: white;
+    border-radius: 5px;
+  }
 
 /* Navbar */
 
@@ -207,7 +212,7 @@ h2 {
 
 .cover .title {
     position: relative;
-    top: 120px;
+    top: 140px;
     font-family: "Exo";
     font-style: normal;
     font-weight: 900;
@@ -229,7 +234,7 @@ h2 {
 .cover .subtitle {
     position: relative;
     left: 90px;
-    top: 115px;
+    top: 135px;
     font-family: "Exo";
     font-style: italic;
     font-weight: normal;
@@ -241,19 +246,26 @@ h2 {
 
 .cover .txt {
     position: relative;
-    top: 150px;
+    top: 170px;
     font-family: "Open Sans";
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
     line-height: 23px;
-    padding-bottom: 20px;
-    border-bottom: var(--second-color) solid 1px;  /* TODO shorten line lenght */
+    padding-bottom: 20px;    
 
 }
 
+.cover .line {
+    position: absolute;
+    top:430px;
+    width: 250px;
+    height: 47px;
+    border-bottom: 1px solid var(--second-color);
+}
+
 .cover ol{
-    margin-top: 170px;
+    margin-top: 200px;
     list-style: none;
     width:100%;
 }
@@ -265,6 +277,14 @@ h2 {
     height: 7px;
     cursor: pointer;
     margin: 5px;
+}
+
+.cover ol li.active{
+    background: var(--third-color);
+}
+
+.cover ol li:hover{
+    background: var(--third-color);
 }
 
 .cover button {
@@ -387,17 +407,20 @@ h2 {
     background-size: cover;
     background-position-y: 70%;
     height: 600px;
+    padding-bottom: 25px
 }
 
 .courses .grid {
     grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
     width: var(--max-width)
-    
 }
 
 .courses .card {
     position: relative;
     left: 20px;
+    top: -30px;
+    
     /* TODO border-bottom: 1px solid var(--third-color); */
 }
 
@@ -406,6 +429,7 @@ h2 {
     left: 20px;
     margin-right: 250px;
 }
+
 
 .courses h2 {
     position:relative;
@@ -432,8 +456,18 @@ h2 {
     
 }
 
+.courses .line {
+    position: absolute;
+    top:150px;
+    width: 250px;
+    height: 47px;
+    border-bottom: 1px solid var(--third-color);
+    
+}
+
 .courses ol{
-    margin-top: 170px;
+    position: relative;
+    
     list-style: none;
     width:100%;
 }
@@ -446,5 +480,98 @@ h2 {
     cursor: pointer;
     margin: 5px;
 }
+
+.courses ol li.active{
+    background: var(--third-color);
+}
+
+.courses ol li:hover{
+    background: var(--third-color);
+}
+
+.courses-list {
+    position: relative;
+    left: 25px;
+    top: -5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.courses button {
+    position: relative;
+    top: -50px;
+    left: -50px;
+}
+
+.courses-list .active {
+    color: var(--third-color);
+}
+
+/* Coderdojo */
+
+.coderdojo {
+    display: flex;
+    position: relative;
+    height: 800px;
+    width: var(--max-width);
+    justify-content: right;
+}
+
+.coderdojo-foreground {
+    position: absolute;
+    padding: 20px 40px;
+    width: 610px;
+    height: 580px;
+    border-radius: 50px;
+    background: linear-gradient(121.14deg, #0055FB 0.71%, #003F96 97.29%);
+    margin-top: 30px;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.coderdojo-subtitle {
+    color: var(--third-color);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.coderdojo h2 {
+    top: 25px;
+}
+
+
+.coderdojo-background {
+    position: absolute;
+    padding: 20px 40px;
+    width: var(--max-width);
+    height: 580px;
+    border-radius: 50px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    background-image: url(/assets/imgs/CoderDojo_One_Rule_Backgrounds_1920x1080_V1.png);
+    background-size: auto 580px;
+    background-repeat: no-repeat;
+    background-position-x: 115%;
+    
+}
+
+.coderdojo-foreground .alert-box {
+    position: relative;
+    top: 20px;
+}
+
+.coderdojo-foreground button {
+    position: relative;
+    top: 40px;
+}
+/* .coderdojo-background img {
+    
+    position: relative;
+    height: 580px;
+    border-radius: 50px;
+} */
 
 /* Footer */
