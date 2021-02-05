@@ -298,23 +298,22 @@ h2 {
 /* Summary */
 
 .summary {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5fr 4fr;
     position: relative;
-    align-content: stretch;
     top: 10px;
     width: var(--max-width);
     align-items: start;
     margin: 0 auto;
     overflow: hidden;
-    height: 630px;
+    height: 600px;
     font-family: "Open Sans";
     z-index: 0;
 
 }
 
-.summary .title {
+.summary h2 {
     position: relative;
-    top: 20px;    
+    top: 15px;    
     font-family: "Exo";
     font-weight: 900;
     font-size: 32px;
@@ -322,15 +321,15 @@ h2 {
     text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
     color: var(--primary-color);
 }
-/* margin: auto; 
-} */
 
 .summary img{
     position: relative;
     top: 100px;
     box-shadow: 0px 0px 20px rgba(107, 219, 255, 0.85);
     border-radius: 10px;
-    max-width: 70%;
+    max-width: 80%;
+    justify-self: start;
+    height: auto;
     left: 50%;
     transform: translateX(-50%);
     
@@ -338,21 +337,36 @@ h2 {
 
 .summary .grid  {
     position: relative;
-    top: 20px;
-    gap: 60px;
-    padding: 50px 0 0 0;
+    align-items: start;
+    gap: 10px;
+    padding: 40px 0 0 0;
    
 }
 
 .summary .card {
     background-color: transparent;
     border-radius: 15px;
-    text-align: center;
+    font-family: Exo;
     font-size: 19px;
+    text-align: center;
     padding: 10px;
     line-height: 25px;
     transition: 0.15s;
     cursor: pointer;
+}
+
+.summary .card h3 {
+    position: relative;
+    left: -5px;
+    font-style: italic;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.summary .card .hash {
+    font-size: 26px;
+    font-weight: normal;
 }
 
 .summary .card:hover {
@@ -367,8 +381,7 @@ h2 {
 
 .summary .icons {
     color: var(--second-color);
-    font-size: 50px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .summary .quote {
