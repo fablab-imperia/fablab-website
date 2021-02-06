@@ -61,41 +61,29 @@ table {
 	border-spacing: 0;
 }
 
-/* -----General Styling------ */
+
+/* ----- Styling------ */
 
 body {
     box-sizing: border-box;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
+    font-weight: 650;
     line-height: 1.6;
     color: var(--primary-color);
     background: var(--background-linear-gradient);
 }
 
-ul {
-    list-style-type: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 900;
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    overflow: auto;
 }
+
 
 a  {
     text-decoration: none;
 }
 
-h1, h2 {
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 5px 0;
-}
-
-p {
-    margin: 10px 0;
-
-}
-
-img {
-    width: 100%;
-}
 
 button {
     justify-self: center;
@@ -138,16 +126,17 @@ h2 {
     border-radius: 5px;
   }
 
-/* Navbar */
+
+  /* Navbar */
 
 .navbar {
-    position: fixed;
+    position: absolute;
+    top:0px;
     width: 100%;
     height: 90px;
     overflow: hidden;
     background: var(--background-semitransp-color);
     font-family: "Open Sans";
-
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
     z-index: 1;
 }
@@ -158,7 +147,10 @@ h2 {
     justify-content: center;
     align-items: center;
     align-content: center;
-
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 900;
+    
 }
 
 .navbar ul a {
@@ -198,7 +190,8 @@ h2 {
 
 .cover {
     position: relative;
-    height: 600px;
+    display: block;
+    height: 100vh;
     background: linear-gradient(93.83deg,
         rgba(0, 0, 0, 0.37) 31.45%,
         rgba(132, 132, 132, 0.12081) 64.68%,
@@ -207,21 +200,25 @@ h2 {
     filter: drop-shadow(0px 4px 60px rgba(0, 0, 0, 0.25));
     background-size: cover;
     background-position-y: 65%;
-    z-index: 0;
     text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
 }
 
 .cover .grid {
         display: grid;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        overflow: auto;
         grid-template-columns: 1fr 2fr;
         gap: 20px;
         justify-content: center;
-        align-items: center;
+        align-content: center;
+        top: 50%;
+        transform: translateY(50%);
 }
 
 .cover h1 {
     position: relative;
-    top: 140px;
+    /* top: 140px; */
     font-family: "Exo";
     font-style: normal;
     font-weight: 900;
@@ -243,7 +240,7 @@ h2 {
 .cover h2 {
     position: relative;
     left: 90px;
-    top: 140px;
+    top: 5px;
     font-family: "Exo";
     font-style: italic;
     font-weight: normal;
@@ -255,7 +252,7 @@ h2 {
 
 .cover p {
     position: relative;
-    top: 170px;
+    top: 50px;
     font-family: "Open Sans";
     font-style: normal;
     font-weight: normal;
@@ -265,16 +262,18 @@ h2 {
 
 }
 
-.cover .line {
-    position: absolute;
-    top:420px;
+.cover p::after {
+    display: block;
+    content: " ";
+    height: 20px;
     width: 250px;
-    height: 47px;
-    border-bottom: 1px solid var(--second-color);
+    border-bottom: 1px solid var(--third-color);
+    z-index: 2;
 }
 
 .cover ol{
-    margin-top: 200px;
+    
+    margin-top: 60px;
     list-style: none;
     width:100%;
 }
@@ -297,7 +296,8 @@ h2 {
 }
 
 .cover button {
-    position: relative; 
+    position: relative;
+    margin-top: 20px; 
     left: 50%;
     transform: translateX(-50%);
 
