@@ -132,8 +132,8 @@ h2 {
 .alert-box {
     padding: 5px 10px;
     margin: 20px 0px;
-    background-color: #ff1100a2;
-    border: 1px solid yellow;
+    background-color: #00ff229f;
+    border: 1px solid rgb(68, 0, 255);
     color: white;
     border-radius: 5px;
   }
@@ -151,8 +151,6 @@ h2 {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
     z-index: 1;
 }
-
-
 
 .navbar ul {
     display: flex;
@@ -181,6 +179,9 @@ h2 {
 }
 
 .navbar .flex {
+    display: flex;
+    height: 100%;
+    align-items: center;
     justify-content: space-between;
 
 }
@@ -210,7 +211,15 @@ h2 {
     text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
 }
 
-.cover .title {
+.cover .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+}
+
+.cover h1 {
     position: relative;
     top: 140px;
     font-family: "Exo";
@@ -222,19 +231,19 @@ h2 {
     color: var(--primary-color);
 }
 
-.cover .title .lab {
+.cover h1 .lab {
     color: var(--third-color);
 }
 
-.cover .title .imperia {
+.cover h1 .imperia {
     position: relative;
     left: 90px;
 }
 
-.cover .subtitle {
+.cover h2 {
     position: relative;
     left: 90px;
-    top: 135px;
+    top: 140px;
     font-family: "Exo";
     font-style: italic;
     font-weight: normal;
@@ -244,7 +253,7 @@ h2 {
     color: var(--second-color);
 }
 
-.cover .txt {
+.cover p {
     position: relative;
     top: 170px;
     font-family: "Open Sans";
@@ -258,7 +267,7 @@ h2 {
 
 .cover .line {
     position: absolute;
-    top:430px;
+    top:420px;
     width: 250px;
     height: 47px;
     border-bottom: 1px solid var(--second-color);
@@ -273,8 +282,8 @@ h2 {
     background: var(--second-color);
     border-radius: 50%;
     display: inline-block;
-    width: 7px;
-    height: 7px;
+    width: 10px;
+    height: 10px;
     cursor: pointer;
     margin: 5px;
 }
@@ -289,15 +298,16 @@ h2 {
 
 .cover button {
     position: relative; 
-    top: 10;
     left: 50%;
     transform: translateX(-50%);
+
 }
 
 
 /* Summary */
 
 .summary {
+    display: grid;
     grid-template-columns: 5fr 4fr;
     position: relative;
     top: 10px;
@@ -336,6 +346,12 @@ h2 {
 }
 
 .summary .grid  {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
     position: relative;
     align-items: start;
     gap: 10px;
@@ -409,9 +425,10 @@ h2 {
     line-height: 40px;
 }
 
-/* Courses */
 
-.courses {
+/* TheLab */
+
+.thelab {
     background: linear-gradient(303.17deg, 
                 rgba(0, 63, 150, 0.72) -0.7%,
                 rgba(0, 75, 203, 0.9) 49.72%,
@@ -419,45 +436,44 @@ h2 {
     box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.25);
     background-size: cover;
     background-position-y: 70%;
-    height: 600px;
+    height: 1000px;
     padding-bottom: 25px
 }
 
-.courses .grid {
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
+.thelab .grid {    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
     width: var(--max-width)
 }
 
-.courses .card {
-    position: relative;
-    left: 20px;
-    top: -30px;
-    
-    /* TODO border-bottom: 1px solid var(--third-color); */
-}
-
-.courses .card p {
-    position: relative;
-    left: 20px;
-    margin-right: 250px;
+.thelab .box {
+    padding: 20px 40px;
+    width: 500px;
+    height: 400px;
+    border-radius: 50px;
+    background: linear-gradient(121.14deg, #0055FB 0.71%, #003F96 97.29%);
+    justify-self: center;
 }
 
 
-.courses h2 {
+.thelab h2 {
     position:relative;
     padding-top: 40px;
 
 }
 
-.courses h3 {
+.thelab h3 {
     position:relative;
     padding-top: 10px;
     font-size: 25px;
     color:var(--third-color);
 }
 
-.courses img{
+.thelab img{
     position: relative;
     box-shadow: 0px 0px 20px rgba(107, 219, 255, 0.85);
     border-radius: 10px;
@@ -469,7 +485,7 @@ h2 {
     
 }
 
-.courses .line {
+.thelab .line {
     position: absolute;
     top:150px;
     width: 250px;
@@ -478,31 +494,7 @@ h2 {
     
 }
 
-.courses ol{
-    position: relative;
-    
-    list-style: none;
-    width:100%;
-}
-.courses ol li{
-    background: var(--second-color);
-    border-radius: 50%;
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.courses ol li.active{
-    background: var(--third-color);
-}
-
-.courses ol li:hover{
-    background: var(--third-color);
-}
-
-.courses-list {
+.thelab-list {
     position: relative;
     left: 25px;
     top: -5px;
@@ -512,13 +504,13 @@ h2 {
     line-height: 18px;
 }
 
-.courses button {
+.thelab button {
     position: relative;
     top: -50px;
     left: -50px;
 }
 
-.courses-list .active {
+.thelab-list .active {
     color: var(--third-color);
 }
 
@@ -527,7 +519,7 @@ h2 {
 .coderdojo {
     display: flex;
     position: relative;
-    height: 800px;
+    height: 650px;
     width: var(--max-width);
     justify-content: right;
 }
@@ -580,11 +572,121 @@ h2 {
     position: relative;
     top: 40px;
 }
-/* .coderdojo-background img {
+
+
+/* Courses */
+
+.courses {
+    background: linear-gradient(303.17deg, 
+                rgba(0, 63, 150, 0.72) -0.7%,
+                rgba(0, 75, 203, 0.9) 49.72%,
+                #001767 98.47%), url("imgs/IMG_7664.JPG");
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.25);
+    background-size: cover;
+    background-position-y: 70%;
+    height: 600px;
+    padding-bottom: 25px
+}
+
+.courses .grid {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
     
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: var(--max-width)
+}
+
+.courses .card {
     position: relative;
-    height: 580px;
-    border-radius: 50px;
-} */
+    left: 20px;
+    top: -30px;
+}
+
+.courses .card p {
+    position: relative;
+    left: 20px;
+    margin-right: 250px;
+}
+
+
+.courses h2 {
+    position:relative;
+    padding-top: 40px;
+
+}
+
+.courses h3 {
+    position:relative;
+    padding-top: 10px;
+    font-size: 25px;
+    color:var(--third-color);
+}
+
+.courses img{
+    position: relative;
+    box-shadow: 0px 0px 20px rgba(107, 219, 255, 0.85);
+    border-radius: 10px;
+    /* margin: 20px; */
+    width: auto;
+    max-height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.courses .line {
+    position: absolute;
+    top:150px;
+    width: 250px;
+    height: 47px;
+    border-bottom: 1px solid var(--third-color);
+    
+}
+
+.courses ol{
+    position: relative;
+    list-style: none;
+    width:100%;
+}
+.courses ol li{
+    background: var(--second-color);
+    border-radius: 50%;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.courses ol li.active{
+    background: var(--third-color);
+}
+
+.courses ol li:hover{
+    background: var(--third-color);
+}
+
+.courses-list {
+    position: relative;
+    left: 25px;
+    top: -5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.courses button {
+    position: relative;
+    top: -50px;
+    left: -50px;
+}
+
+.courses-list .active {
+    color: var(--third-color);
+}
 
 /* Footer */
