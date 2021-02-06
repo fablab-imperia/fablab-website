@@ -189,8 +189,9 @@ h2 {
 /* Section-1 */
 
 .cover {
+    display:flex;
+    align-content: center;
     position: relative;
-    display: block;
     height: 100vh;
     background: linear-gradient(93.83deg,
         rgba(0, 0, 0, 0.37) 31.45%,
@@ -212,8 +213,8 @@ h2 {
         gap: 20px;
         justify-content: center;
         align-content: center;
-        top: 50%;
-        transform: translateY(50%);
+        /* top: 50%;
+        transform: translateY(50%); */
 }
 
 .cover h1 {
