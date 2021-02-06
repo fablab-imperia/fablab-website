@@ -64,6 +64,10 @@ table {
 
 /* ----- Styling------ */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
@@ -82,11 +86,14 @@ body {
 
 a  {
     text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 650;
+    line-height: 1.6;
+    color: var(--primary-color);
 }
 
 
-button {
-    justify-self: center;
+.button {
     display:inline-block;
     background: var(--primary-linear-gradient);
     border-radius: 15px;
@@ -98,12 +105,15 @@ button {
     font-weight: 700;
     opacity: 0.85;
     transition: 0.25s;
+    justify-self: center;
+    /* left: -50%;
+    transform: translateX(50%); */
+    
 }
 
-button:hover {
-    transform: scale(0.98);
+.button:hover {
+    transform: translateX(50%), scale(0.96);
     opacity: 1;
-
 }
 
 h2 {
