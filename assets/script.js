@@ -1,7 +1,12 @@
-var element = document.getElementById('themesel')
 
 var clickHandler = function () {
-  console.log('Click just happened')
-}
+  console.log('Click just happened');
+};
 
-element.addEventListener('click', clickHandler)
+var onDocumentLoaded = function() {
+  var element = document.getElementById('themesel');
+  element.addEventListener('click', clickHandler);
+};
+
+window.addEventListener('load', onDocumentLoaded);
+
