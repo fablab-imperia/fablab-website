@@ -115,6 +115,10 @@ p {
     margin-bottom: 20px; /* between paragraphs */
     }
 
+strong {
+    color: var(--highlight-color);
+}
+
 .button {
     display:inline-block;
     background: var(--fg-linear-gradient);
@@ -282,6 +286,7 @@ i:hover {
     overflow: hidden;
     background-color: #0053B1;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+    box-shadow: 0 3px 1rem rgba(0,0,0,.1);
     z-index: 1;
 }
 
@@ -412,11 +417,14 @@ i:hover {
 
 .summary {
     display: grid;
-    grid-template-columns: 5fr 4fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     position: relative;
     top: 10px;
+    gap: 0 100px;
     width: var(--max-width);
-    align-items: start;
+    align-items: center;
+    /* justify-content: stretch; */
     margin: 0 auto;
     /* overflow: hidden; */
     /* height: 600px; */
@@ -429,16 +437,16 @@ i:hover {
     font-weight: 900;
     font-size: 32px;
     letter-spacing: 0.02em;
+    margin-bottom: 50px;
     text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
     color: var(--fg-color);
 }
 
 .summary img{
     position: relative;
-    top: 100px;
     box-shadow: 0px 0px 20px rgba(107, 219, 255, 0.85);
     border-radius: 10px;
-    max-width: 80%;
+    max-width: 90%;
     justify-self: start;
     height: auto;
     left: 50%;
@@ -446,24 +454,27 @@ i:hover {
     
 }
 
-.summary .grid  {
+.summary p {
+    font-weight: 500;
+    text-indent: 1rem;
+    margin-bottom: 20px;
+}
+
+.summary .elements-grid  {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: start;
     gap: 10px;
-    padding: 60px 0;
+
    
 }
 
 .card {
     background-color: transparent;
     border-radius: 15px;
-    font-family: Exo;
-    font-size: 19px;
+    font-family: "Exo", sans-serif;
+    font-size: 15px;
     text-align: center;
     padding: 10px;
     line-height: 25px;
@@ -475,13 +486,13 @@ i:hover {
     position: relative;
     left: -5px;
     font-style: italic;
-    font-size: 26px;
+    font-size: 1.2rem;
     font-weight: 700;
-    line-height: 30px;
+    /* line-height: 30px; */
 }
 
  .card .hash {
-    font-size: 26px;
+    font-size: 1.2rem;
     font-weight: normal;
 }
 
