@@ -10,6 +10,8 @@
   document.documentElement.style.setProperty('--background-linear-gradient', 'linear-gradient(180deg, #c9b171 -2.22%, #86571a 97.78%)');
 }; */
 
+// let summaryHover1=document.getElementById("labCard");
+
 var onDocumentLoaded = function() {
   // var element = document.getElementById('themesel');
   // element.addEventListener('click', clickHandler);
