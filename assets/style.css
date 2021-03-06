@@ -330,13 +330,10 @@ a  {
 
 .summary .wrapper {
     position: relative;
-    display: grid;
-    row-gap: 2rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    /* grid-template-rows: minmax(auto, 1fr) minmax(0, 1fr); */
-    width: 100%;
-    
-    align-items: center;
+    display: flex;
+    width: 60%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     /* border: 1px solid red; */
 }
 
