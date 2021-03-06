@@ -20,10 +20,13 @@
     --second-color:#006CA8;
     --third-color: #006CA8;
 
+
     --navbar-height: 5rem;
     --navbar-reduced-height: 3rem;
 
     --rounded-divider-height: 4rem;
+
+    /* filter: invert(100%); */
 
 }
 
