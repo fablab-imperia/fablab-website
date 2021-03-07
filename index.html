@@ -7,13 +7,14 @@
     <title>Fablab Imperia</title>
     <link rel="icon" href="assets/imgs/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/utilities.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
     <header class="navbar">
-        <div class="wrapper flex">
+        <div class="wrapper">
             <h1 class="logo"><a href="index.html"><img id="logo" src="assets/imgs/logohero.webp" alt="Fablab Imperia logo"></a></h1>
             <nav>
                 <ul>
@@ -39,13 +40,14 @@
                 <h2>dove le idee prendono vita!</h2>
             </div>
             <div class="hero-quote">
-                <p>Dal 2015 l’Associazione Fablab Imperia è un laboratorio di fabbricazione digitale dotato di macchinari innovativi, come Stampanti 3D, Fresatrice e Plotter: 
-                una realtà unica nel contesto della provincia di Imperia e del Ponente Ligure</p>
+
                 
+                <p>Dal 2015 l’Associazione Fablab Imperia è il primo laboratorio di fabbricazione digitale del Ponente Ligure, dotato di macchinari innovativi come Stampanti 3D Fresatrice e Plotter e luogo di incontro per gli appassionati di tecnologie</p>
+                <div class="button"><a href="#summary">Entra nel Fablab!</a></div>
             </div>
         </div>
 
-        <svg class="rounded-divider" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <svg class="hero-divider" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <!-- <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path> -->
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
         </svg>        
@@ -53,44 +55,48 @@
 
 <!-- SUMMARY SECTION -->
 
-    <section class="summary">
-        <div class="wrapper">
+    <section id="summary" class="summary">
+        <h1>I nostri servizi</h1>
+        <p>Vieni a scoprire cosa possiamo offrirti</p>
+        <div class="wrapper py-4">
                 <div id="labCard" class="card">
                     <i class="fas fa-3x fa-users"></i>
                     <h3><span class="hash">#</span>Laboratorio</h3>
                     <h4>sociale attrezzato</span>
+                </div>
+                <div id="servicesCard" class="card">
+                    <i class="fas fa-3x fa-cubes"></i>
+                    <h3><span class="hash">#</span>Service</h3>
+                    <h4>Stampa3D - CNC</h4>
                 </div>
                 <div id="coursesCard" class="card">
                     <i class="fas fa-3x fa-chalkboard-teacher"></i>
                     <h3><span class="hash">#</span>Corsi</h3>
                     <h4>per adulti e bambini</h4>
                 </div>
-                <div id="servicesCard" class="card">
-                    <i class="fas fa-3x fa-cubes"></i>
-                    <h3><span class="hash">#</span>Servizi</h3>
-                    <h4>Stampa3D - CNC...</h4>
-                </div>
-                <div id="eventsCard" class="card">
+                <!-- <div id="eventsCard" class="card">
                     <i class="fas fa-3x fa-calendar-day"></i>
                     <h3><span class="hash">#</span>Eventi</h3>
                     <h4>al pubblico sul territorio</h4>
-                </div>
+                </div> -->
                 <div id="projectsCard" class="card">
                     <i class="fas fa-3x fa-pencil-ruler"></i>
                     <h3><span class="hash">#</span>Progettazione</h3>
                     <h4>sviluppo di invenzioni</h4>
                 </div>
-                <div id="sharingCard" class="card">
+                <!-- <div id="sharingCard" class="card">
                     <i class="fas fa-3x fa-brain"></i>
                     <h3><span class="hash">#</span>Condivisione</h3>
                     <h4>di idee e progetti</h4>
-                </div>
+                </div> -->
                 
-            
         </div>
-        </div>
+        
     </section>
 
+    <section class="splash">
+        <h1 class="py-3">LABORATORIO</h1>
+    </section>
 
     <script src="assets/script.js"></script>
 </body>
