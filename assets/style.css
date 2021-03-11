@@ -4,14 +4,6 @@
 
     --max-width: 1366px; /* ex 1170 */
 
-    /* dark theme */
-    --bg-color:rgba(0, 96, 185);
-    --fg-color: #fff;
-    --hero-bg-color: linear-gradient(180deg, #0053B1 -2.22%, #002988 97.78%);;
-    --hero-color: #fff;
-    --second-color:#F48C06;
-    --third-color: #30daf1;
-
     /* light theme */
     --bg-color: #fff5e7;
     --fg-color: #A86002;
@@ -19,7 +11,6 @@
     --hero-color: #F48C06;
     --second-color:#006CA8;
     --third-color: #74A70E;
-
 
     --navbar-height: 5rem;
     --navbar-reduced-height: 3rem;
@@ -168,7 +159,6 @@ a  {
 
 .navbar {
     position: fixed;
-    top:0px;
     width: 100%;
     height: var(--navbar-height);
     overflow: hidden;
@@ -190,7 +180,7 @@ a  {
     width: auto;
     align-content:center;
     transition: height .5s ease;
-    padding: 5px;
+    padding-top: 10px;
 }
 
 .navbar ul {
@@ -409,6 +399,11 @@ a  {
     /* border: 1px solid red; */
 }
 
+
+.summary > h3 {
+    color: var(--third-color);
+}
+
 /* .summary .wrapper:nth-child(3n) {
     flex-basis: 100%;
 } */
@@ -491,7 +486,8 @@ a  {
 .laboratory .wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    
+    column-gap: 50px;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .laboratory h1 {
@@ -499,9 +495,30 @@ a  {
     color: var(--hero-color);
 }
 
-.summary > h3 {
-    color: var(--third-color);
+.laboratory img {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 100%;
+    height: auto;
 }
+
+.laboratory .figure img:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(41,137,216,0.92) 100%,rgba(125,185,232,0) 100%);
+    z-index: 1;
+  }
+
+
+
 
 .custom-shape-divider-top-1615193803 {
     position: absolute;
