@@ -230,8 +230,13 @@ a  {
 
     overflow: hidden;
     background: var(--hero-bg-color);
+    
+    background: linear-gradient(90deg, #ffdfb6ff 0%, #ffdfb6fc 30%, rgba(255, 255, 255, 0.39) 100%), url('imgs/IMG_2880cropped2.jpg');
+    background-size: cover;
+    background-position-y: 25%;
     padding-top: calc(var(--navbar-height) * 2.2);
     padding-bottom: calc(var(--waves-divider-height) + 30px);
+    
     /* border: 1px solid blue; */
     
 }
@@ -244,6 +249,7 @@ a  {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: minmax(auto, 1fr) minmax(0, 1fr);
     align-items: center;
+    z-index: 0;
     
     
     /* border: 1px solid red; */
@@ -517,9 +523,6 @@ a  {
     z-index: 1;
   }
 
-
-
-
 .custom-shape-divider-top-1615193803 {
     position: absolute;
     top: 0;
@@ -539,3 +542,35 @@ a  {
 .custom-shape-divider-top-1615193803 .shape-fill {
     fill: #FFF5E7;
 }
+
+
+
+.test {
+    font-family: "Share Tech Mono", monospace;
+    color: #fff;
+    font-size: 6vh;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .45);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+.test::before,
+.test::after {
+      content: '';
+      display: block;
+      height: 0.09em;
+      min-width: 30vw;
+    }
+    
+.test::before {
+      background: linear-gradient(to right, rgba(240,240,240,0), #fff);
+      margin-right: 4vh;
+    }
+    
+.test::after {
+      background: linear-gradient(to left, rgba(240,240,240,0), #fff);
+      margin-left: 4vh;
+    } 
+  
