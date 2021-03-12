@@ -129,8 +129,8 @@ a  {
 .wrapper {
     max-width: var(--max-width);
     margin-left: auto; /* longhand preferred here to avoid adiacent wrappers confusion */
-    margin-right: auto;
-
+    margin-right: auto;  /* TODO add dynamic margins */
+    
 }
 
 /* UTILITY */
@@ -227,13 +227,12 @@ a  {
     display: grid;
     position: relative;
     place-content: center;
-
     overflow: hidden;
-    background: var(--hero-bg-color);
-    
-    background: linear-gradient(90deg, #ffdfb6ff 0%, #ffdfb6fc 30%, rgba(255, 255, 255, 0.39) 100%), url('imgs/IMG_2880cropped2.jpg');
-    background-size: cover;
-    background-position-y: 25%;
+    /* background: var(--hero-bg-color); */
+    background: linear-gradient(90deg, #ffdfb6ff 0%, #ffdfb6ff 30%, #ffdfb622 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_20170604_155258\ crop2.jpg');
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: right;    
     padding-top: calc(var(--navbar-height) * 2.2);
     padding-bottom: calc(var(--waves-divider-height) + 30px);
     
@@ -244,12 +243,11 @@ a  {
 .hero .wrapper {
     position: relative;
     display: grid;
-    height: 400px;
+    max-height: 400px;
     justify-content: center;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: minmax(auto, 1fr) minmax(0, 1fr);
     align-items: center;
-    z-index: 0;
     
     
     /* border: 1px solid red; */
@@ -285,6 +283,7 @@ a  {
     top:40px;
     height: 100%;
     width: 100%;
+    filter: drop-shadow( 0 0 25px #ffdfb6ff);
 
 }
 /* .logocontainer {
@@ -322,6 +321,7 @@ a  {
     font-size: 80px;
     line-height: 75px;
     color: var(--hero-color);
+    filter: drop-shadow( 0 0 5px #ffdfb6);
 }
 
 .hero h1 .lab {
@@ -356,7 +356,7 @@ a  {
     z-index: 2;
 } */
 
-.hero-divider {
+.top-divider {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -368,7 +368,7 @@ a  {
     animation: divider-anim 5s alternate-reverse infinite ease-in-out;
 }
 
-.hero-divider .shape-fill {
+.top-divider .shape-fill {
     fill: var(--bg-color);
 }
 
@@ -523,7 +523,7 @@ a  {
     z-index: 1;
   }
 
-.custom-shape-divider-top-1615193803 {
+.bottom-divider {
     position: absolute;
     top: 0;
     left: 0;
@@ -532,14 +532,14 @@ a  {
     line-height: 0;
 }
 
-.custom-shape-divider-top-1615193803 svg {
+.bottom-divider svg {
     position: relative;
     display: block;
     width: calc(157% + 1.3px);
     height: var(--waves-divider-height);
 }
 
-.custom-shape-divider-top-1615193803 .shape-fill {
+.bottom-divider .shape-fill {
     fill: #FFF5E7;
 }
 
