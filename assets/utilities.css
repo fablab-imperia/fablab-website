@@ -18,6 +18,10 @@
     padding: 4rem 0;
 }
 
+.py-6 {
+    padding: 5rem 0;
+}
+
 .p-1 {
     padding: 1rem;
 }
@@ -36,4 +40,8 @@
 
 .p-5 {
     padding: 4rem;
+} 
+
+.p-5 {
+    padding: 5rem;
 } 
