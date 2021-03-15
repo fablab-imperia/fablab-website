@@ -340,7 +340,7 @@ section {
     place-content: center;
     height: 90vh;
     overflow: hidden;
-    background: linear-gradient(90deg, #ffdfb6ff 0%, #ffdfb6ff 30%, #ffdfb622 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_20170604_155258\ crop2.jpg');
+    background: linear-gradient(90deg, #ffdfb6dd 0%, #ffdfb6dd 30%, #ffdfb622 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_20170604_155258\ crop2.jpg');
     background-size: cover;
     background-repeat:no-repeat;
     background-position: right;   
