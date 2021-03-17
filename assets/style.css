@@ -16,8 +16,10 @@
     --fg-color: #A86002;
     --hero-bg-color: #ffdfb6;
     --hero-color: #F48C06;
+    --hero-color-faded: #F48C0611;
     --second-color:#006CA8;
     --third-color: #74A70E;
+    --third-color-faded: #74A70E11;
 
     --navbar-height: 5rem;
     --navbar-reduced-height: 3rem;
@@ -126,8 +128,8 @@ h2 {
     line-height: 50px;
 
 }
-h3 {font-size: 1.8rem;
-    font-weight: 700;
+h3 {font-size: 1.4rem;
+    font-weight: 600;
 }
 h4 {font-size: 1.25rem;}
 h5 {font-size: 1.1rem;}
@@ -573,9 +575,9 @@ section {
 }
 
 @keyframes bg{
-    0% {background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_2885cropped.JPG');}
-    50%{background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_2880cropped2.jpg');}
-    100%{background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_2885cropped.JPG');}
+    0% {background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0) 100%), url('imgs/IMG_2885cropped.JPG');}
+    50%{background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0) 100%), url('imgs/IMG_2880cropped2.jpg');}
+    100%{background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0) 100%), url('imgs/IMG_2885cropped.JPG');}
 
     0% {opacity: 1;}
     24% {opacity: 1;}
@@ -625,17 +627,34 @@ section {
 
 .services-grid {
     display: grid;
+    gap: 10px;
+    padding: 10px;
     width: 60%;
     grid-template-columns: 1fr 2fr 2fr;
     height: 100%;
-    border: 1px solid red;
     border-radius: 15px;
     justify-content: center;
     align-items: stretch;
+    font-size: 14px;
+    background-color: var(--hero-color-faded);
+}
+
+/* .services-grid *:nth-child(3n) {background-color: var(--third-color-faded);} */
+
+.services-grid div {
+    display: flex;
+    align-self: center;
+}
+
+.services-grid h4 {
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
 }
 
 .services-grid > * {
     display: flex;
     justify-content: center;
-    border: 1px solid blue;
+    align-content: center;
+    /* border: 1px solid blue; */
 }
