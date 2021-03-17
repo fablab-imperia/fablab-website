@@ -2,6 +2,14 @@ var onDocumentLoaded = function() {
     // var element = document.getElementById('themesel');
     // element.addEventListener('click', clickHandler);
     window.onscroll = function() {scrollFunction()};
+
+    // const lab_bg = document.querySelector('.laboratory');
+    // lab_bg.addEventListener('mouseover', function() {
+    //   console.log("CIAO");
+    //   lab_bg.classList.toggle('laboratory-hover');
+    //   // lab_bg.style.backgroundImage = "url(imgs/IMG_2880cropped2.jpg)";
+    // })
+
   };
   
   
