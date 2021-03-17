@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans&display=swap');
 
+/* TODOs
+- fix linear gradients continuity 
+- 
+*/
+
 :root {
 
     --max-width: 1366px; /* ex 1170 */
@@ -557,7 +562,7 @@ section {
     background-repeat: no-repeat;
     background-position: right;    
     overflow: hidden;
-    animation: bg linear 10s infinite;
+    animation: bg linear 12s infinite;
 }
 
 @keyframes bg{
@@ -573,11 +578,13 @@ section {
     74% {opacity: 1;}
     75% {opacity: 0;}
     76% {opacity: 1;}
-    100% {opacity: 1;
-    }
+    100% {opacity: 1;}
+
+}
 
 .laboratory .wrapper {
     display: grid;
+    padding: calc(var(--waves-divider-height)) 0;
     grid-template-columns: 1fr 2fr;
     /* grid-template-rows: minmax(0, 1fr); */
     column-gap: 50px;
