@@ -557,36 +557,24 @@ section {
     background-repeat: no-repeat;
     background-position: right;    
     overflow: hidden;
-    animation: bg ease-in-out 5s infinite;
-
+    animation: bg linear 10s infinite;
 }
 
 @keyframes bg{
-    0%{
-        background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_2885cropped.JPG');
-    }
-    25%{
-        opacity: 0;
-    }
-    50%{
-        background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_2880cropped2.jpg');
-        opacity: 1;
-    }
-    75%{
-        opacity: 0;
-    }
-    100%{
-        background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_2885cropped.JPG');
-        opacity: 1;
-    }
-}
+    0% {background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_2885cropped.JPG');}
+    50%{background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_2880cropped2.jpg');}
+    100%{background-image: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_2885cropped.JPG');}
 
-/* .laboratory-hover {
-    background: linear-gradient(80deg, #ffdfb6 0%, #ffdfb6ff 35%, #ffdfb644 60%, rgba(255, 228, 197, 0.39) 100%), url('imgs/IMG_2880cropped2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;   
-} */
+    0% {opacity: 1;}
+    24% {opacity: 1;}
+    25% {opacity: 0;}
+    26% {opacity: 1;}
+    50% {opacity: 1;}
+    74% {opacity: 1;}
+    75% {opacity: 0;}
+    76% {opacity: 1;}
+    100% {opacity: 1;
+    }
 
 .laboratory .wrapper {
     display: grid;
