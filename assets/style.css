@@ -1,0 +1,83 @@
+
+/* table of contents
+
+1. global styles
+2. typography
+3. components 
+    3.1 buttons
+
+*/
+
+/* ============
+
+global styles
+
+============ */
+
+:root {
+    --clr-bodybg-500: hsl(0, 0%, 98%);
+    --clr-navbg-500: rgba(86, 136, 203,50%);
+    --clr-default-500: hsl(0, 0%, 0%);
+    --clr-first-500: hsl(209, 100%, 15%);
+    --clr-second-500: hsl(88, 52%, 58%);
+    --clr-third-500: hsl(359, 47%, 59%);
+
+    --navbar-height: 4rem;
+    --wrapper-width: 1400px;
+
+}
+
+* {
+    box-sizing: border-box;
+    /* border: 1px solid red !important; */
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 1rem;            /* restore size to browser default */
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--clr-default-500);
+    background: var(--clr-background-500);
+}
+
+header {
+    background: var(--clr-navbg-500);
+    height: var(--navbar-height);
+}
+
+header img {
+    height: var(--navbar-height);
+    padding: 0.3rem;
+}
+
+.wrapper {
+    margin: 0 max(30px, 5%);
+    /* width: var(--wrapper-width); */
+}
+
+
+
+
+
+
+
+/* ============
+
+typography
+
+============ */
+
+
+
+
+
+
+
+/* ============
+
+components
+
+============ */
