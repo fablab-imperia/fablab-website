@@ -13,6 +13,8 @@
 global styles
 
 ============ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
 :root {
     --clr-bodybg-500: hsl(0, 0%, 98%);
@@ -23,7 +25,9 @@ global styles
     --clr-third-500: hsl(359, 47%, 59%);
 
     --navbar-height: 4rem;
-    --wrapper-width: 1400px;
+    --wrapper-width: 1440px;
+
+    /* --brk-mobtodesk: 800px; */
 
 }
 
@@ -38,14 +42,35 @@ html {
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: var(--clr-default-500);
-    background: var(--clr-background-500);
+    background-color: #999999; /* , var(--clr-background-500); */
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-default-500);  /* fallback color */
+    color: var(--clr-link);
+}
+
+.wrapper {
+    max-width: var(--wrapper-width);
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 header {
+    position: relative;
+    z-index: 99;
     background: var(--clr-navbg-500);
     height: var(--navbar-height);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    --clr-link: white;
+    text-align: center;
+    
 }
 
 header img {
@@ -53,10 +78,162 @@ header img {
     padding: 0.3rem;
 }
 
-.wrapper {
-    margin: 0 max(30px, 5%);
-    /* width: var(--wrapper-width); */
+.nav-toggle {
+    position: absolute !important;
+    /* workaround to make it tappable */
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+
+.nav-toggle-label {
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+    margin-right: 1.5em;
+    height: 100%;
+    align-items: center;
 }
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  
+.nav-toggle-label span::after {
+    top: 7px;
+  }
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+    /* opacity: 1; */
+  }
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+nav {
+    position: absolute;
+    text-align: right;
+    top: 100%;
+    right: 0;
+    padding-right: 1.5em;
+    background: var(--clr-navbg-500);
+    width: 100%;
+    /* opacity: 0; */
+    transform: scale(1, 0);
+    transform-origin:top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav a:hover {
+    color: var(--clr-second-500);
+  }
+
+nav li {
+    margin-bottom: .8em;
+    margin-left: .8em;
+  }
+
+nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+/* ### MEDIA QUERIES ### */
+
+@media screen and (min-width: 1000px) {
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    .navbar {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    header  {
+        text-align: left;
+    }
+
+    nav {
+        all: unset;
+        /* Edge compatibility */
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1,1);
+        background: none;
+        top: initial;
+        left: initial;
+        /* end of Edge compatibility */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;    
+    }
+    
+    nav ul {
+      display: flex;
+    }
+    
+    nav li {
+      margin-left: 3em;
+      margin-bottom: 0;
+    }
+    
+    nav a {
+      opacity: 1;
+      position: relative;
+      font-size: 0.9rem;
+    }
+    
+    nav a::before {
+      content: '';
+      display: block;
+      height: 2px;
+      background: var(--clr-second-500);
+      position: absolute;
+      bottom: -.75em;
+      left: 0;
+      right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
+    
+    nav a:hover::before {
+      transform: scale(1,1);
+    }
+  }
+
+
+  /* 
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  } */
 
 
 
