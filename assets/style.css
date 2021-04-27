@@ -6,7 +6,13 @@
 3. components 
     3.1 buttons
 
-4. hero section
+4. sections
+    navbar
+    hero
+    main
+
+5. media queries
+
 */
 
 /* ============
@@ -79,12 +85,12 @@ components
 
 /* ============
 
-header
+navbar
 
 ============ */
 
 
-.hero {
+.navbar {
     position: fixed;
     width: 100%;
     z-index: 99;
@@ -98,7 +104,7 @@ header
     
 }
 
-.hero img {
+.navbar img {
     height: var(--navbar-height);
     padding: 0.3rem;
 }
@@ -187,7 +193,11 @@ nav a {
 
 
 
-/* ### MEDIA QUERIES ### */
+/* ============
+
+media queries
+
+============ */
 
 @media screen and (min-width: 1000px) {
 
@@ -195,13 +205,9 @@ nav a {
         display: none;
     }
 
-    .navbar {
+    .navbar__grid {
         display: grid;
         grid-template-columns: auto auto;
-
-    }
-
-    .hero  {
         text-align: left;
     }
 
