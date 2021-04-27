@@ -6,6 +6,7 @@
 3. components 
     3.1 buttons
 
+4. hero section
 */
 
 /* ============
@@ -31,14 +32,14 @@ global styles
 
 }
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
     /* border: 1px solid red !important; */
 }
 
 html {
     scroll-behavior: smooth;
-    font-size: 1rem;            /* restore size to browser default */
+    font-size: 1rem;            /* restore rem size to browser default */
 }
 
 body {
@@ -47,21 +48,45 @@ body {
     background-color: #999999; /* , var(--clr-background-500); */
 }
 
-a {
-    text-decoration: none;
-    color: var(--clr-default-500);  /* fallback color */
-    color: var(--clr-link);
-}
-
 .wrapper {
-    max-width: var(--wrapper-width);
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
+  width: 80%;
+  max-width: var(--wrapper-width);
+  margin: 0 auto;
+  /* padding-left: 20px;
+  padding-right: 20px; */
 }
 
-header {
-    position: relative;
+/* ============
+
+typography
+
+============ */
+
+a {
+  text-decoration: none;
+  color: var(--clr-default-500);  /* fallback color */
+  color: var(--clr-link);
+}
+
+
+/* ============
+
+components
+
+============ */
+
+
+
+/* ============
+
+header
+
+============ */
+
+
+.hero {
+    position: fixed;
+    width: 100%;
     z-index: 99;
     background: var(--clr-navbg-500);
     height: var(--navbar-height);
@@ -73,7 +98,7 @@ header {
     
 }
 
-header img {
+.hero img {
     height: var(--navbar-height);
     padding: 0.3rem;
 }
@@ -122,7 +147,6 @@ header img {
 
 .nav-toggle:checked ~ nav {
     transform: scale(1,1);
-    /* opacity: 1; */
   }
 
 .nav-toggle:checked ~ nav a {
@@ -138,7 +162,6 @@ nav {
     padding-right: 1.5em;
     background: var(--clr-navbg-500);
     width: 100%;
-    /* opacity: 0; */
     transform: scale(1, 0);
     transform-origin:top;
     transition: transform 400ms ease-in-out;
@@ -161,6 +184,9 @@ nav a {
     transition: opacity 150ms ease-in-out;
   }
 
+
+
+
 /* ### MEDIA QUERIES ### */
 
 @media screen and (min-width: 1000px) {
@@ -172,34 +198,26 @@ nav a {
     .navbar {
         display: grid;
         grid-template-columns: auto auto;
+
     }
 
-    header  {
+    .hero  {
         text-align: left;
     }
 
     nav {
         all: unset;
-        /* Edge compatibility */
-        position: relative;
-        text-align: left;
-        transition: none;
-        transform: scale(1,1);
-        background: none;
-        top: initial;
-        left: initial;
-        /* end of Edge compatibility */
         display: flex;
-        justify-content: space-between;
         align-items: center;    
     }
     
     nav ul {
+      width: 100%;
       display: flex;
+      justify-content: space-around;
     }
     
     nav li {
-      margin-left: 3em;
       margin-bottom: 0;
     }
     
@@ -241,20 +259,4 @@ nav ul {
 
 
 
-/* ============
 
-typography
-
-============ */
-
-
-
-
-
-
-
-/* ============
-
-components
-
-============ */
