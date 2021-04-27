@@ -56,7 +56,7 @@ body {
 }
 
 .wrapper {
-  width: 80%;
+  width: 90%;
   max-width: var(--wrapper-width);
   margin: 0 auto;
   /* padding-left: 20px;
@@ -178,7 +178,8 @@ nav {
     transition: transform 400ms ease-in-out;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
     color: var(--clr-second-500);
   }
 
@@ -203,10 +204,10 @@ hero
 
 .hero {
   background: 
-  linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 20.14%, rgba(154, 170, 184, 0.311182) 56.2%, rgba(255, 255, 255, 0) 100%), 
+  linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 20.14%, rgba(49, 81, 111, 0.54) 38.9%, rgba(154, 170, 184, 0.311182) 56.2%, rgba(255, 255, 255, 0) 100%),  
   url(/assets/imgs/IMG_20170604_155258\ crop2.jpg);
   background-size: cover;
-  background-position: top left 20%;
+  background-position: top left 40%;
   background-repeat: no-repeat;
   border: solid 1px red;
 }
@@ -224,7 +225,7 @@ hero
   font-family: Montserrat;
   font-style: normal;
   font-weight: 300;
-  font-size: 8vw;
+  font-size: clamp(40px, 8vw, 8rem);
   letter-spacing: 0.05em;
 
   color: var(--clr-herotitle-500);
@@ -241,7 +242,7 @@ hero
   font-family: Montserrat;
   font-style: normal;
   font-weight: 700;
-  font-size: 6vw;
+  font-size: clamp(30px, 6vw, 6rem);
   color: var(--clr-second-500);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -253,7 +254,7 @@ hero
   font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
-  font-size: 2vw;
+  font-size: clamp(18px, 2vw, 2em);
   line-height: 1.2;
 
   color: #63C7FF;
@@ -316,7 +317,8 @@ media queries
       transition: transform ease-in-out 250ms;
     }
     
-    nav a:hover::before {
+    nav a:hover::before,
+    nav a:focus::before {
       transform: scale(1,1);
     }
   }
