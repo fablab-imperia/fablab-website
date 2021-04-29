@@ -56,8 +56,7 @@ body {
 }
 
 .wrapper {
-  width: 90%;
-  max-width: var(--wrapper-width);
+  width: min(90%, var(--wrapper-width));
   margin: 0 auto;
   /* padding-left: 20px;
   padding-right: 20px; */
