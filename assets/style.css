@@ -1,18 +1,11 @@
 
 /* table of contents
-
 1. global styles
 2. typography
 3. components 
     3.1 buttons
-
 4. sections
-    navbar
-    hero
-    main
-
 5. media queries
-
 */
 
 /* ============
@@ -24,7 +17,8 @@ global styles
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
 :root {
-    --clr-bodybg-500: hsl(0, 0%, 98%);
+  /* colors   */
+  --clr-bodybg-500: hsl(0, 0%, 98%);
     --clr-navbg-500: rgba(86, 136, 203,50%);
     --clr-default-500: hsl(0, 0%, 0%);
     --clr-herotitle-500: hsl(0, 0%, 100%);
@@ -32,11 +26,29 @@ global styles
     --clr-first-500: hsl(209, 100%, 15%);
     --clr-second-500: hsl(88, 52%, 58%);
     --clr-third-500: hsl(359, 47%, 59%);
+    --clr-hero-grad: linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 25%, rgba(49, 81, 111, 0.54) 55%, rgba(154, 170, 184, 0.311182) 82%, rgba(255, 255, 255, 0) 100%);
+    --clr-hero-grad-brk: linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 20.14%, rgba(49, 81, 111, 0.54) 38.9%, rgba(154, 170, 184, 0.311182) 56.2%, rgba(255, 255, 255, 0) 100%);
+
+    /* font families */
+    --ff-h: 'Montserrat', sans-serif;
+    --ff-p: 'Open Sans', sans-serif;
+
+    /* font sizes */
+    --fs-h1: 2.375rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.2rem;
+    --fs-p: 1.0625rem;
+    --fs-btn: 0.875rem;
+
+    /* layout */
+    --spacer: 1rem;
+    --spacer-sm: calc(var(--spacer) * 0.5);
+    --spacer-md: calc(var(--spacer) * 2);
+    --spacer-lg: calc(var(--spacer) * 3);
+    --spacer-xlg: calc(var(--spacer) * 5);
 
     --navbar-height: 4rem;
-    --wrapper-width: 1440px;
-
-    /* --brk-mobtodesk: 800px; */
+    --wrapper-maxwidth: 1440px;
 
 }
 
@@ -51,15 +63,17 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--ff-p);
     color: var(--clr-default-500);
 }
 
+img {
+  max-width: 100%;
+}
+
 .wrapper {
-  width: min(90%, var(--wrapper-width));
+  width: min(90%, var(--wrapper-maxwidth));
   margin: 0 auto;
-  /* padding-left: 20px;
-  padding-right: 20px; */
 }
 
 /* ============
@@ -74,9 +88,35 @@ a {
   color: var(--clr-link);
 }
 
-
 strong {
   font-weight: bold;
+}
+
+h1, h2 {
+  font-family: var(--ff-h);
+  font-weight: bold;
+  letter-spacing: -1.5;
+  color: var(--clr-first-500);
+  margin-top: var(--spacer-sm);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  color: var(--clr-second-500);
+}
+
+p {
+  font-size: var(--fs-p);
+  margin-top: var(--spacer);
+  line-height: 1.4;
 }
 
 /* ============
@@ -85,6 +125,20 @@ components
 
 ============ */
 
+.btn {
+  display: inline-block;
+  padding: 1em 3em;
+  border: 2px solid var(--clr-second-500);
+  border-radius: 15px;
+  margin-top: var(--spacer-md);
+  margin-bottom: var(--spacer-md);
+  font-size: var(--fs-btn);
+  letter-spacing: 0.05em;
+}
+
+section {
+  margin-top: var(--spacer-xlg);
+}
 
 
 /* ============
@@ -100,7 +154,7 @@ navbar
     z-index: 99;
     background: var(--clr-navbg-500);
     height: var(--navbar-height);
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--ff-p);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -204,10 +258,10 @@ hero
 
 .hero {
   background: 
-  linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 20.14%, rgba(49, 81, 111, 0.54) 38.9%, rgba(154, 170, 184, 0.311182) 56.2%, rgba(255, 255, 255, 0) 100%),  
+  var(--clr-hero-grad),
   url(/assets/imgs/IMG_20170604_155258\ crop2.jpg);
   background-size: cover;
-  background-position: top left 40%;
+  background-position: top left 45%;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
@@ -261,16 +315,34 @@ laboratory
 
 ============ */
 
-.laboratory {
-  padding: 5em 0;
-}
-
 
 /* ============
 
 media queries
 
 ============ */
+
+@media screen and (min-width: 500px) {
+
+  .hero {
+    background: 
+    var(--clr-hero-grad-brk),
+    url(/assets/imgs/IMG_20170604_155258\ crop2.jpg);
+    background-size: cover;
+    background-position: top left 40%;
+    background-repeat: no-repeat;
+  
+  }
+
+  .f-row {
+    display: flex;
+    gap: 2em;
+  }
+
+  .f-col {
+    width: 100%;
+  }
+}
 
 @media screen and (min-width: 1000px) {
 
