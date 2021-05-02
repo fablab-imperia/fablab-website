@@ -53,7 +53,7 @@ global styles
     --spacer-xlg: calc(var(--spacer) * 5);
 
     --navbar-height: 4rem;
-    --wrapper-maxwidth: 1220px;
+    --wrapper-maxwidth: 1440px;
 
 }
 
@@ -359,7 +359,7 @@ media queries
 
 ============ */
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
 
   .hero {
     background: 
@@ -397,7 +397,7 @@ media queries
 
     .navbar__grid {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr 1.5fr;
         text-align: left;
     }
 
