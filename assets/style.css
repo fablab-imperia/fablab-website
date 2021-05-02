@@ -193,7 +193,7 @@ navbar
     align-items: center;
 }
 
-.nav-toggle-label span,
+.nav-toggle-label span,             /* hamburger menu symbol */
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
   display: block;
@@ -204,7 +204,7 @@ navbar
   position: relative;
 }
 
-.nav-toggle-label span::before,
+.nav-toggle-label span::before,     
 .nav-toggle-label span::after {
   content: '';
   position: absolute;
@@ -218,7 +218,7 @@ navbar
     top: 7px;
   }
 
-.nav-toggle:checked ~ nav {
+.nav-toggle:checked ~ nav {         /* hamburger menu toggle */
     transform: scale(1,1);
   }
 
@@ -227,7 +227,7 @@ navbar
     transition: opacity 250ms ease-in-out 250ms;
 }
 
-nav {
+nav {                             /* navigation menu */
     position: absolute;
     text-align: right;
     top: 100%;
