@@ -342,10 +342,11 @@ laboratory
 
 .blob-container {
   margin-bottom: var(--spacer);
+  filter: drop-shadow(8px 8px 0.05vw var(--clr-second-500-bg));
   
 }
 
-.blob-container::before {
+/* .blob-container::before {
   content: "";
   background: var(--clr-second-500-bg);
   position: absolute;
@@ -355,7 +356,7 @@ laboratory
   clip-path: url(#myclip);
   transform-origin: center;
   transform: rotate(180deg);
-}
+} */
 
 
 /* ============
