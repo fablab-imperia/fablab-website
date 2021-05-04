@@ -47,7 +47,7 @@ global styles
 
     /* layout */
     --spacer: 1rem;
-    --spacer-sm: calc(var(--spacer) * 0.5);
+    --spacer-sm: calc(var(--spacer) * 0.3);
     --spacer-md: calc(var(--spacer) * 2);
     --spacer-lg: calc(var(--spacer) * 3);
     --spacer-xlg: calc(var(--spacer) * 5);
@@ -107,6 +107,7 @@ h1, h2 {
 
 h1 {
   font-size: var(--fs-h1);
+  margin-bottom: var(--spacer);
 }
 
 h2 {
@@ -116,11 +117,13 @@ h2 {
 h3 {
   font-size: var(--fs-h3);
   color: var(--clr-second-500);
+  margin-top: var(--spacer);
+  
 }
 
 p {
   font-size: var(--fs-p);
-  margin-top: var(--spacer);
+  margin-bottom: var(--spacer);
   line-height: 1.4;
   max-width: 70ch;
 }
@@ -131,22 +134,56 @@ components
 
 ============ */
 
-.btn {
-  display: inline-block;
-  padding: 1em 3em;
-  border: 2px solid var(--clr-second-500);
-  border-radius: 15px;
-  margin-top: var(--spacer-md);
-  margin-bottom: var(--spacer-md);
-  font-size: var(--fs-btn);
-  letter-spacing: 0.05em;
-}
-
 section {
   margin-top: var(--spacer-lg);
   /* padding-top: var(--spacer-lg);
   padding-bottom: var(--spacer-lg); */
 }
+
+.btn {
+  display: inline-block;
+  padding: 1em 2.5em;
+  border: 1.8px solid var(--clr-second-500);
+  border-radius: 15px;
+  margin-bottom: var(--spacer-sm);
+  font-size: var(--fs-btn);
+  letter-spacing: 0.05em;
+}
+
+.blob1 {
+  position: absolute;   /* hide SVG from DOM workaround. Do not use display: none */
+  width: 0;
+  height: 0;
+}
+
+.blob1__img {
+  clip-path: url(#blob1-clip);
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+/* == blob decoration method 1: clippath in the container */
+.blob-container::before {
+  content: "";
+  background: var(--clr-second-500-bg);
+  position: absolute;
+  width: 103%;
+  height: 100%;
+  z-index: -1;
+  clip-path: url(#blob1-clip);
+  transform-origin: center;
+  transform: rotate(180deg);
+}
+
+/* == blob decoration method 2: drop shadow effect on clippath container */
+/* .blob-container {
+  margin-bottom: var(--spacer);
+  filter: drop-shadow(8px 8px 0.05vw var(--clr-second-500-bg));  
+} */
+
+/* == blob decoration method 3: insert svg in html and place both imgs on top of each other with position absolute
+      discarded because position absolute messes up the layout */
+
 
 
 /* ============
@@ -269,7 +306,7 @@ hero
   var(--clr-hero-grad),
   url(/assets/imgs/IMG_20170604_155258\ crop2.jpg);
   background-size: cover;
-  background-position: top left 45%;
+  background-position: top left 40%;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;  
@@ -284,12 +321,11 @@ hero
   position: relative;
   left: -0.3vw;     /* fine alignment */
   font-weight: 300;
-  font-size: clamp(40px, 8vw, 8rem);
+  font-size: clamp(60px, 8vw, 8rem);
   letter-spacing: 0.05em;
-
   color: var(--clr-herotitle-500);
-
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0;
 }
 
 .hero__title strong {
@@ -299,9 +335,10 @@ hero
 .hero__subtitle {
   display: block;
   font-weight: 700;
-  font-size: clamp(30px, 6vw, 6rem);
+  font-size: clamp(50px, 6vw, 8rem);
   color: var(--clr-second-500);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0;
 }
 
 .hero__text {
@@ -324,48 +361,10 @@ laboratory
 
 ============ */
 
-.blob1 {                /* SVG */
-  position: absolute;   /* hide from dom workaround */
-  width: 0;
-  height: 0;
-}
-
-.blob1__img {
-  clip-path: url(#blob1-clip);
-  object-fit: cover;
-  /* aspect-ratio: 1 / 1; */
-}
-
 .laboratory .f-col {
-  position: relative;     /* to allow pseudoelement on child */
+  position: relative;     /* to allow contained pseudoelement in child */
 }
 
-
-
-/* == method 1: clippath in the container */
-
-.blob-container::before {
-  content: "";
-  background: var(--clr-second-500-bg);
-  position: absolute;
-  width: 103%;
-  height: 100%;
-  z-index: -1;
-  clip-path: url(#blob1-clip);
-  transform-origin: center;
-  transform: rotate(180deg);
-}
-
-/* == method 2: drop shadow effect on clippath container */
-
-/* .blob-container {
-  margin-bottom: var(--spacer);
-  filter: drop-shadow(8px 8px 0.05vw var(--clr-second-500-bg));
-  
-} */
-
-/* == method 3: insert svg in html and place both imgs on top of each other with position absolute
-                discarded because position absolute messes up the layout */
 
 
 
@@ -382,7 +381,7 @@ media queries
     var(--clr-hero-grad-brk),
     url(/assets/imgs/IMG_20170604_155258\ crop2.jpg);
     background-size: cover;
-    background-position: top left 40%;
+    background-position: center left 40%;
     background-repeat: no-repeat;
 
   }
@@ -390,16 +389,23 @@ media queries
   .f-row {
     display: flex;
     gap: 3em;
+  }
+
+  .services .f-col {
+    
+  }
+
+  .laboratory .f-row {
     flex-direction: row-reverse;
   }
 
-  .f-col:nth-of-type(1) {
+  .laboratory .f-col:nth-of-type(1) {
     align-self: flex-start;   /* ignore flex row height to position pseudo element below img clip-path*/
     width: 40%; 
     
   }
 
-  .f-col:nth-of-type(2) {
+  .laboratory .f-col:nth-of-type(2) {
     align-self: center;
     width: 60%;
   }
