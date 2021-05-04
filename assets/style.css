@@ -126,7 +126,8 @@ p {
   margin-bottom: var(--spacer);
   margin-top: var(--spacer);
   line-height: 1.4;
-  max-width: 70ch;
+  /* max-width: 70ch; */
+  
 }
 
 /* ============
@@ -164,7 +165,9 @@ section {
 }
 
 .blob-container {
-  
+  position: relative;     /* to allow contained pseudoelement in child */
+  align-self: flex-start;   /* ignore flex row height to position pseudo element below img clip-path*/
+
 }
 
 /* == blob decoration method 1: clippath in the container */
@@ -366,10 +369,18 @@ laboratory
 
 ============ */
 
-.blob-container {
-  position: relative;     /* to allow contained pseudoelement in child */
-  align-self: flex-start;   /* ignore flex row height to position pseudo element below img clip-path*/
+
+
+/* ============
+
+services
+
+============ */
+
+.services .f-col__txt {
+  text-align: right;
 }
+
 
 
 
@@ -395,6 +406,8 @@ media queries
   .f-row {
     display: flex;
     gap: 3em;
+    justify-content: space-between;
+    
   }
 
   .f-col__imgs {
@@ -404,7 +417,7 @@ media queries
 
   .f-col__txt {
     align-self: center;
-    width: 60%;
+    width: 50%;
   }
 
   .laboratory .f-row {
