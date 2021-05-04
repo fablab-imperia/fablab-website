@@ -218,7 +218,7 @@ navbar
     top: 7px;
   }
 
-.nav-toggle:checked ~ nav {         /* hamburger menu toggle */
+.nav-toggle:checked ~ nav {         /* hamburger menu appears vertically */
     transform: scale(1,1);
   }
 
@@ -331,7 +331,7 @@ laboratory
 }
 
 .blob1__img {
-  clip-path: url(#myclip);
+  clip-path: url(#blob1-clip);
   object-fit: cover;
   /* aspect-ratio: 1 / 1; */
 }
@@ -340,23 +340,33 @@ laboratory
   position: relative;     /* to allow pseudoelement on child */
 }
 
-.blob-container {
-  margin-bottom: var(--spacer);
-  filter: drop-shadow(8px 8px 0.05vw var(--clr-second-500-bg));
-  
-}
 
-/* .blob-container::before {
+
+/* == method 1: clippath in the container */
+
+.blob-container::before {
   content: "";
   background: var(--clr-second-500-bg);
   position: absolute;
   width: 103%;
   height: 100%;
   z-index: -1;
-  clip-path: url(#myclip);
+  clip-path: url(#blob1-clip);
   transform-origin: center;
   transform: rotate(180deg);
+}
+
+/* == method 2: drop shadow effect on clippath container */
+
+/* .blob-container {
+  margin-bottom: var(--spacer);
+  filter: drop-shadow(8px 8px 0.05vw var(--clr-second-500-bg));
+  
 } */
+
+/* == method 3: insert svg in html and place both imgs on top of each other with position absolute
+                discarded because position absolute messes up the layout */
+
 
 
 /* ============
