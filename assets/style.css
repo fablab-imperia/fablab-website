@@ -187,7 +187,6 @@ section {
   left: -10px;
   width: 105%;
   height: 102%;
-  z-index: 0;
   clip-path: url(#blob1-clip);
   transform-origin: center;
   transform: rotate(180deg);
@@ -453,6 +452,17 @@ plans
 
 /* ============
 
+coderdojo
+
+============ */
+
+
+.coderdojo .blob-container::before {
+  background: var(--clr-first-500-bg);
+}
+
+/* ============
+
 media queries
 
 ============ */
@@ -491,9 +501,6 @@ media queries
 
   
 
-  /* .services .blob-container::before {
-    background: var(--clr-first-500-bg);
-  } */
 
 
 
