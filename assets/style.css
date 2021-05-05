@@ -28,6 +28,7 @@ global styles
     --clr-herotitle-500: hsl(0, 0%, 100%);
     --clr-fgnavbar-500: hsl(0, 0%, 100%);
     --clr-first-500: hsl(209, 100%, 15%);
+    --clr-first-500-bg: #E0EEFF;
     --clr-second-500: hsl(88, 52%, 58%);
     --clr-second-500-bg: rgba(152, 204, 92, 40%);
     --clr-third-500: hsl(359, 47%, 59%);
@@ -103,6 +104,7 @@ h1, h2 {
   letter-spacing: -1.5;
   color: var(--clr-first-500);
   margin-top: var(--spacer-sm);
+  line-height: 1.1;
 }
 
 h1 {
@@ -175,18 +177,22 @@ section {
   content: "";
   background: var(--clr-second-500-bg);
   position: absolute;
-  width: 103%;
-  height: 100%;
+  top: -5px;
+  left: -10px;
+  width: 105%;
+  height: 102%;
   z-index: -1;
   clip-path: url(#blob1-clip);
   transform-origin: center;
   transform: rotate(180deg);
+  aspect-ratio: 1 / 1;
 }
 
 /* == blob decoration method 2: drop shadow effect on clippath container */
-/* .blob-container {
+
+/* .blob-container img {
   margin-bottom: var(--spacer);
-  filter: drop-shadow(8px 8px 0.05vw var(--clr-second-500-bg));  
+  filter: drop-shadow(2vw 2vw 0px var(--clr-second-500-bg));  
 } */
 
 /* == blob decoration method 3: insert svg in html and place both imgs on top of each other with position absolute
@@ -356,9 +362,7 @@ hero
   font-weight: 600;
   font-size: clamp(16px, 2vw, 2em);
   line-height: 1.2;
-
   color: #63C7FF;
-
   padding: 3em 0;
 }
 
@@ -368,6 +372,8 @@ hero
 laboratory
 
 ============ */
+
+
 
 
 
@@ -381,9 +387,17 @@ services
   text-align: right;
 }
 
+.services .f-sub-row  {
+  display: flex;
+  gap: 20px;
+}
+.services .f-sub-row .f-col {
+  width: 50%;
+}
 
-
-
+.services .f-col__imgs div:nth-of-type(2) {   /* moves second subcolumns a bit lower for design  */
+  padding-top: var(--spacer-md);
+}
 
 /* ============
 
@@ -391,7 +405,7 @@ media queries
 
 ============ */
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
 
   .hero {
     background: 
@@ -400,23 +414,21 @@ media queries
     background-size: cover;
     background-position: center left 40%;
     background-repeat: no-repeat;
-
   }
 
   .f-row {
     display: flex;
     gap: 3em;
     justify-content: space-between;
-    
   }
 
   .f-col__imgs {
     width: 40%; 
-    gap:10px;
+    gap: 10px;
   }
 
   .f-col__txt {
-    align-self: center;
+    align-self: center;   /* centers txt block vertically */
     width: 50%;
   }
 
@@ -424,9 +436,15 @@ media queries
     flex-direction: row-reverse;
   }
 
-  .services .f-col__imgs div:nth-of-type(2) {
-    padding-top: var(--spacer-lg);
+  .services .f-col {    /* sets the sub-columns with equal width preventing imgs size differences */
+    width: 50%; 
   }
+
+  /* .services .blob-container::before {
+    background: var(--clr-first-500-bg);
+  } */
+
+
 
 }
 
@@ -438,7 +456,7 @@ media queries
 
     .navbar__grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.2fr 1.3fr;
         text-align: left;
     }
 
