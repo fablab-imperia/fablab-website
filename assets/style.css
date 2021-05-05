@@ -30,6 +30,7 @@ global styles
     --clr-first-500: hsl(209, 100%, 15%);
     --clr-first-500-bg: #E0EEFF;
     --clr-second-500: hsl(88, 52%, 58%);
+    --clr-second-700: #56B071; /*  hsl(88, 52%, 40%); */
     --clr-second-500-bg: rgba(152, 204, 92, 40%);
     --clr-third-500: hsl(359, 47%, 59%);
     --clr-hero-grad: linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 25%, rgba(49, 81, 111, 0.54) 55%, rgba(154, 170, 184, 0.311182) 82%, rgba(255, 255, 255, 0) 100%);
@@ -116,12 +117,16 @@ h2 {
   font-size: var(--fs-h2);
 }
 
-h3 {
+h4 {
   font-size: var(--fs-h3);
-  color: var(--clr-second-500);
+  color: var(--clr-second-700);
   margin-top: var(--spacer);
-  
 }
+
+ul {
+  line-height: 1.2;
+}
+
 
 p {
   font-size: var(--fs-p);
@@ -129,8 +134,9 @@ p {
   margin-top: var(--spacer);
   line-height: 1.4;
   /* max-width: 70ch; */
-  
 }
+
+
 
 /* ============
 
@@ -139,15 +145,16 @@ components
 ============ */
 
 section {
-  margin-top: var(--spacer-lg);
+  margin-top: var(--spacer-xlg);
   /* padding-top: var(--spacer-lg);
   padding-bottom: var(--spacer-lg); */
 }
 
 .btn {
   display: inline-block;
-  padding: 1em 2.5em;
-  border: 1.8px solid var(--clr-second-500);
+  background: var(--clr-herotitle-500);   /* TODO assign color */
+  padding: 1em 1.8em;
+  border: 1.8px solid var(--clr-second-700);
   border-radius: 15px;
   margin-bottom: var(--spacer-sm);
   font-size: var(--fs-btn);
@@ -169,7 +176,6 @@ section {
 .blob-container {
   position: relative;     /* to allow contained pseudoelement in child */
   align-self: flex-start;   /* ignore flex row height to position pseudo element below img clip-path*/
-
 }
 
 /* == blob decoration method 1: clippath in the container */
@@ -181,11 +187,15 @@ section {
   left: -10px;
   width: 105%;
   height: 102%;
-  z-index: -1;
+  z-index: 0;
   clip-path: url(#blob1-clip);
   transform-origin: center;
   transform: rotate(180deg);
   aspect-ratio: 1 / 1;
+}
+
+.f-col {
+  align-self: center;
 }
 
 /* == blob decoration method 2: drop shadow effect on clippath container */
@@ -214,7 +224,7 @@ navbar
     background: var(--clr-navbg-500);
     height: var(--navbar-height);
     font-family: var(--ff-p);
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     --clr-link: var(--clr-fgnavbar-500);
@@ -385,6 +395,7 @@ services
 
 .services .f-col__txt {
   text-align: right;
+  
 }
 
 .services .f-sub-row  {
@@ -393,11 +404,52 @@ services
 }
 .services .f-sub-row .f-col {
   width: 50%;
+  z-index: 1;       /* to stay on top of blob */
 }
 
 .services .f-col__imgs div:nth-of-type(2) {   /* moves second subcolumns a bit lower for design  */
   padding-top: var(--spacer-md);
 }
+
+.services ul li::before {
+  content: "\2022";
+  color: var(--clr-second-700);
+  font-weight: bold;
+  display: inline-block;
+  width: 1rem; 
+}
+
+
+/* ============
+
+courses
+
+============ */
+
+.courses {
+  background: var(--clr-first-500-bg);
+  z-index: 0;
+  padding-top: var(--spacer-xlg);
+  padding-bottom: var(--spacer-xlg);
+}
+
+.courses__list {
+  font-family: var(--ff-h);
+  font-weight: 500;
+  color: var(--clr-second-700);
+}
+
+
+/* ============
+
+plans
+
+============ */
+
+.plan {
+  display: block;
+}
+
 
 /* ============
 
@@ -432,13 +484,12 @@ media queries
     width: 50%;
   }
 
-  .laboratory .f-row {
+  .laboratory .f-row,
+  .courses .f-row {
     flex-direction: row-reverse;
   }
 
-  .services .f-col {    /* sets the sub-columns with equal width preventing imgs size differences */
-    width: 50%; 
-  }
+  
 
   /* .services .blob-container::before {
     background: var(--clr-first-500-bg);
