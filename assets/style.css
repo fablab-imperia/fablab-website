@@ -55,7 +55,7 @@ global styles
     --spacer-xlg: calc(var(--spacer) * 5);
 
     --navbar-height: 4rem;
-    --wrapper-maxwidth: 1440px;
+    --wrapper-maxwidth: 1240px;
 
 }
 
@@ -170,12 +170,13 @@ section {
 .blob1__img {
   clip-path: url(#blob1-clip);
   object-fit: cover;
-  aspect-ratio: 1 / 1;
+  
 }
 
 .blob-container {
   position: relative;     /* to allow contained pseudoelement in child */
   align-self: flex-start;   /* ignore flex row height to position pseudo element below img clip-path*/
+  
 }
 
 /* == blob decoration method 1: clippath in the container */
@@ -188,14 +189,14 @@ section {
   width: 105%;
   height: 102%;
   clip-path: url(#blob1-clip);
-  transform-origin: center;
-  transform: rotate(180deg);
-  aspect-ratio: 1 / 1;
+  /* transform-origin: center;
+  transform: rotate(180deg); */
+  /* aspect-ratio: 1 / 1; */
 }
 
-.f-col {
+/* .f-col {
   align-self: center;
-}
+} */
 
 /* == blob decoration method 2: drop shadow effect on clippath container */
 
@@ -487,6 +488,7 @@ media queries
   .f-col__imgs {
     width: 40%; 
     gap: 10px;
+    align-self: center;
   }
 
   .f-col__txt {
