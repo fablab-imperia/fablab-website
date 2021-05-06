@@ -3,7 +3,7 @@
 --table of contents--
 
 1. global styles
-2. typography
+2. global typography
 3. components 
     3.1 buttons
 4. sections
@@ -43,7 +43,8 @@ global styles
     /* font sizes */
     --fs-h1: 2.375rem;
     --fs-h2: 2rem;
-    --fs-h3: 1.2rem;
+    --fs-h3: 1.75rem;
+    --fs-h4: 1.2rem;
     --fs-p: 1.0625rem;
     --fs-btn: 0.875rem;
 
@@ -74,6 +75,12 @@ body {
     color: var(--clr-default-500);
 }
 
+section {
+  margin-top: var(--spacer-xlg);
+  /* padding-top: var(--spacer-lg);
+  padding-bottom: var(--spacer-lg); */
+}
+
 img {
   max-width: 100%;
 }
@@ -83,9 +90,14 @@ img {
   margin: 0 auto;
 }
 
+/* .f-col {
+  align-self: flex-start;
+}
+ */
+
 /* ============
 
-typography
+global typography
 
 ============ */
 
@@ -117,8 +129,16 @@ h2 {
   font-size: var(--fs-h2);
 }
 
-h4 {
+h3 {
+  font-family: var(--ff-h);
   font-size: var(--fs-h3);
+  color: var(--clr-first-500);
+  margin-bottom: var(--spacer);
+}
+
+h4 {
+  font-family: var(--ff-p);
+  font-size: var(--fs-h4);
   color: var(--clr-second-700);
   margin-top: var(--spacer);
 }
@@ -143,12 +163,6 @@ p {
 components
 
 ============ */
-
-section {
-  margin-top: var(--spacer-xlg);
-  /* padding-top: var(--spacer-lg);
-  padding-bottom: var(--spacer-lg); */
-}
 
 .btn {
   display: inline-block;
@@ -194,9 +208,7 @@ section {
   /* aspect-ratio: 1 / 1; */
 }
 
-/* .f-col {
-  align-self: center;
-} */
+
 
 /* == blob decoration method 2: drop shadow effect on clippath container */
 
@@ -446,9 +458,65 @@ plans
 
 ============ */
 
-.plan {
-  display: block;
+
+.plans p {
+  font-weight: 500;
 }
+
+.plans ul {
+  padding: inherit;     /* to make ul horizontally aligned */
+}
+
+.plans li {
+  font-weight: 600;
+  line-height: 1.5;
+  padding-left: 0.5em /* marker distancing */
+}
+
+.plans__rectangle {
+  padding: 1.2em;
+  border-radius: 20px;
+  font-family: var(--ff-h);
+  color: var(--clr-first-500);
+  margin-top: var(--spacer);
+}
+
+.plans__rectangle--members {
+  background: var(--clr-second-500-bg);
+}
+
+.plans__rectangle--public {
+  background: var(--clr-first-500-bg);
+}
+
+.plans__rectangle--price{
+  font-size: 3.375rem;
+  font-weight: 700;
+  line-height: 1rem;
+}
+
+.plans__rectangle--centered {
+  text-align: center;
+}
+
+.plans__rectangle ::marker {
+  font-family: 'Font Awesome 5 Free';
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.plans__rectangle .checked::marker {
+  color: var(--clr-second-700);
+  content: '\f058';
+}
+
+.plans__rectangle .unchecked::marker {
+  color: var(--clr-third-500);
+  content: '\f05e';
+}
+
+
+
 
 
 /* ============
@@ -483,6 +551,11 @@ media queries
     display: flex;
     gap: 3em;
     justify-content: space-between;
+    align-content: stretch;
+    }
+
+  .f-col {
+    height: 100%;
   }
 
   .f-col__imgs {
@@ -501,10 +574,14 @@ media queries
     flex-direction: row-reverse;
   }
 
-  
+  .plans h1 {
+    text-align: center;
+  }
 
-
-
+  .plans .f-row {
+    justify-content: center;
+    align-content: stretch;  /* !!! */
+  }
 
 }
 
