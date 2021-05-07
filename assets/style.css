@@ -156,6 +156,13 @@ p {
   /* max-width: 70ch; */
 }
 
+.caption {
+  font-family: var(--ff-h);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
 
 
 /* ============
@@ -459,25 +466,30 @@ plans
 ============ */
 
 
-.plans p {
+.plans {
   font-weight: 500;
 }
 
 .plans ul {
-  padding: inherit;     /* to make ul horizontally aligned */
+  padding-left: inherit;     /* to make ul horizontally aligned */
+  padding-bottom: var(--spacer); 
 }
 
-.plans li {
+.plans li  {
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.8;
   padding-left: 0.5em /* marker distancing */
 }
 
-.plans__rectangle {
-  padding: 1.2em;
+
+.plans__rectangle {  
+  position: relative; /* to allow button to be pos. absolute */
+  padding: var(--spacer);
+  padding-bottom: calc(3.5em + var(--spacer));  /* to allow space for btn on bottom */
   border-radius: 20px;
   font-family: var(--ff-h);
   color: var(--clr-first-500);
+  height: 100%;
   margin-top: var(--spacer);
 }
 
@@ -495,7 +507,19 @@ plans
   line-height: 1rem;
 }
 
-.plans__rectangle--centered {
+.plans__rectangle--highlight {
+  color: var(--clr-second-700);
+}
+
+.plans__rectangle--btn {
+  position: absolute;
+  padding-left: var(--spacer);
+  padding-right: var(--spacer);
+  bottom: var(--spacer);
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   text-align: center;
 }
 
@@ -551,11 +575,10 @@ media queries
     display: flex;
     gap: 3em;
     justify-content: space-between;
-    align-content: stretch;
     }
 
   .f-col {
-    height: 100%;
+    width: 100%;    /* generale use flex columns equal in width */
   }
 
   .f-col__imgs {
@@ -580,7 +603,9 @@ media queries
 
   .plans .f-row {
     justify-content: center;
-    align-content: stretch;  /* !!! */
+    width: 80%;
+    gap: 2em;
+    margin: 0 auto;
   }
 
 }
