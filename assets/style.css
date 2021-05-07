@@ -77,7 +77,7 @@ body {
 
 section {
   padding-top: var(--spacer-lg);
-  padding-bottom: var(--spacer-md);
+  padding-bottom: var(--spacer-lg);
   /* padding-top: var(--spacer-lg);
   padding-bottom: var(--spacer-lg); */
 }
