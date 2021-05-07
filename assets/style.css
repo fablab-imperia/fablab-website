@@ -181,6 +181,17 @@ components
   font-size: var(--fs-btn);
   letter-spacing: 0.05em;
   line-height: 1.25;
+  transform: scale(1);
+  transform-origin: center;
+  transition-duration: 150ms;
+}
+
+.btn:focus, 
+.btn:hover {
+  transform: scale(0.98);
+  background: var(--clr-second-500);
+  
+  
 }
 
 .blob1 {
@@ -479,9 +490,9 @@ plans
 }
 
 .plans ul {
-  padding-left: inherit;     /* to make ul horizontally aligned */
+  padding-left: 1.05rem;     /* to make ul horizontally aligned */
   padding-bottom: var(--spacer); 
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 .plans li  {
@@ -492,7 +503,7 @@ plans
 
 .plans__rectangle {  
   position: relative; /* to allow button to be pos. absolute */
-  padding: var(--spacer);
+  padding: 1.2rem;
   padding-bottom: calc(3.5em + var(--spacer));  /* to allow space for btn on bottom */
   border-radius: 20px;
   font-family: var(--ff-h);
@@ -570,7 +581,7 @@ events
 .events {
   background: url(/assets/imgs/fieralibroviacascione.jpeg);
   background-size: cover;
-  background-position: center;
+  background-position: center top 60%;
   min-height: 50vh;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
@@ -582,6 +593,7 @@ events
 .events h1 {
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: var(--spacer);
 }
 
 .events div {
