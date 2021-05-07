@@ -122,7 +122,7 @@ h1, h2 {
 
 h1 {
   font-size: var(--fs-h1);
-  margin-bottom: var(--spacer);
+  margin-bottom: var(--spacer-sm);
 }
 
 h2 {
@@ -132,6 +132,7 @@ h2 {
 h3 {
   font-family: var(--ff-h);
   font-size: var(--fs-h3);
+  font-weight: 00;
   color: var(--clr-first-500);
   margin-bottom: var(--spacer);
 }
@@ -140,7 +141,7 @@ h4 {
   font-family: var(--ff-p);
   font-size: var(--fs-h4);
   color: var(--clr-second-700);
-  margin-top: var(--spacer);
+  margin-top: var(--spacer-md);
 }
 
 ul {
@@ -151,7 +152,7 @@ ul {
 p {
   font-size: var(--fs-p);
   margin-bottom: var(--spacer);
-  margin-top: var(--spacer);
+  margin-top: var(--spacer-sm);
   line-height: 1.4;
   /* max-width: 70ch; */
 }
@@ -164,7 +165,6 @@ p {
 }
 
 
-
 /* ============
 
 components
@@ -175,7 +175,7 @@ components
   display: inline-block;
   background: var(--clr-herotitle-500);   /* TODO assign color */
   padding: 1em 1.8em;
-  border: 1.8px solid var(--clr-second-700);
+  border: 2px solid var(--clr-second-700);
   border-radius: 15px;
   margin-bottom: var(--spacer-sm);
   font-size: var(--fs-btn);
@@ -197,7 +197,6 @@ components
 .blob-container {
   position: relative;     /* to allow contained pseudoelement in child */
   align-self: flex-start;   /* ignore flex row height to position pseudo element below img clip-path*/
-  
 }
 
 /* == blob decoration method 1: clippath in the container */
@@ -205,9 +204,9 @@ components
   content: "";
   background: var(--clr-second-500-bg);
   position: absolute;
-  top: -5px;
-  left: -10px;
-  width: 105%;
+  top: 5px;
+  left: -8px;
+  width: 108%;
   height: 102%;
   clip-path: url(#blob1-clip);
   /* transform-origin: center;
@@ -433,7 +432,7 @@ services
   color: var(--clr-second-700);
 }
 
-.services p {
+.services .f-col__imgs p {
   font-family: var(--ff-h);
   font-weight: 600;
   margin: 0;
@@ -472,19 +471,20 @@ plans
 ============ */
 
 
-.plans {
+.plans p {
   font-weight: 500;
+  margin-top: 0;
 }
 
 .plans ul {
   padding-left: inherit;     /* to make ul horizontally aligned */
   padding-bottom: var(--spacer); 
+  line-height: 1.5;
 }
 
 .plans li  {
   font-weight: 600;
-  line-height: 1.8;
-  padding-left: 0.5em /* marker distancing */
+  padding-left: 0.5em; /* marker distancing */
 }
 
 
@@ -546,9 +546,6 @@ plans
 }
 
 
-
-
-
 /* ============
 
 coderdojo
@@ -579,7 +576,7 @@ media queries
 
   .f-row {
     display: flex;
-    gap: 3em;
+    gap: 2em;
     justify-content: space-between;
     }
 
@@ -609,7 +606,7 @@ media queries
 
   .plans .f-row {
     justify-content: center;
-    width: 80%;
+    width: min(80%, 700px);
     gap: 2em;
     margin: 0 auto;
   }
