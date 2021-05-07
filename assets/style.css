@@ -34,6 +34,7 @@ global styles
     --clr-third-500: hsl(359, 47%, 59%);
     --clr-hero-grad: linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 25%, rgba(49, 81, 111, 0.54) 55%, rgba(154, 170, 184, 0.311182) 82%, rgba(255, 255, 255, 0) 100%);
     --clr-hero-grad-brk: linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 20.14%, rgba(49, 81, 111, 0.54) 38.9%, rgba(154, 170, 184, 0.311182) 56.2%, rgba(255, 255, 255, 0) 100%);
+    --clr-footerbg-500: #032340;
 
     /* font families */
     --ff-h: 'Montserrat', sans-serif;
@@ -75,7 +76,8 @@ body {
 }
 
 section {
-  margin-top: var(--spacer-xlg);
+  padding-top: var(--spacer-lg);
+  padding-bottom: var(--spacer-md);
   /* padding-top: var(--spacer-lg);
   padding-bottom: var(--spacer-lg); */
 }
@@ -356,7 +358,8 @@ hero
   background-position: top left 40%;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
-  font-style: normal;  
+  font-style: normal;
+  margin-bottom: var(--spacer-md);
 }
 
 .hero .wrapper {
@@ -398,6 +401,7 @@ hero
   line-height: 1.2;
   color: #63C7FF;
   padding: 3em 0;
+  margin: 0;
 }
 
 
@@ -597,6 +601,18 @@ events
 
 /* ============
 
+footer
+
+============ */
+
+
+.footer {
+  background-color: var(--clr-footerbg-500);
+  
+}
+
+/* ============
+
 media queries
 
 ============ */
@@ -605,6 +621,10 @@ media queries
 
   html {
     scroll-padding-top: 6em;
+  }
+
+  h4 {
+    margin-top: 0;
   }
 
   .hero {
