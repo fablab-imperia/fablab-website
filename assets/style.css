@@ -173,13 +173,14 @@ components
 
 .btn {
   display: inline-block;
-  background: var(--clr-herotitle-500);   /* TODO assign color */
-  padding: 1em 1.8em;
+  background: rgba(255, 255, 255, 0.9);   /* TODO assign color */
+  padding: 0.8em 1.8em;
   border: 2px solid var(--clr-second-700);
   border-radius: 15px;
   margin-bottom: var(--spacer-sm);
   font-size: var(--fs-btn);
   letter-spacing: 0.05em;
+  line-height: 1.25;
 }
 
 .blob1 {
@@ -366,7 +367,7 @@ hero
   font-size: clamp(60px, 8vw, 8rem);
   letter-spacing: 0.05em;
   color: var(--clr-herotitle-500);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   margin: 0;
 }
 
@@ -379,7 +380,8 @@ hero
   font-weight: 700;
   font-size: clamp(50px, 6vw, 8rem);
   color: var(--clr-second-500);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  line-height: 0.8;
   margin: 0;
 }
 
@@ -557,6 +559,36 @@ coderdojo
   background: var(--clr-first-500-bg);
 }
 
+
+
+/* ============
+
+events
+
+============ */
+
+.events {
+  background: url(/assets/imgs/fieralibroviacascione.jpeg);
+  background-size: cover;
+  background-position: center;
+  min-height: 50vh;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;  
+  text-align: right;
+  padding: var(--spacer-md);
+}
+
+.events h1 {
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.events div {
+  text-align: right;
+}
+
+
 /* ============
 
 media queries
@@ -610,7 +642,6 @@ media queries
     gap: 2em;
     margin: 0 auto;
   }
-
 }
 
 @media screen and (min-width: 1000px) {
