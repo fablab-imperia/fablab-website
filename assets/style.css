@@ -414,7 +414,6 @@ services
 
 .services .f-col__txt {
   text-align: right;
-  
 }
 
 .services .f-sub-row  {
@@ -430,14 +429,21 @@ services
   padding-top: var(--spacer-md);
 }
 
-.services ul li::before {
-  content: "\2022";
+.services ::marker {
   color: var(--clr-second-700);
-  font-weight: bold;
-  display: inline-block;
-  width: 1rem; 
 }
 
+.services p {
+  font-family: var(--ff-h);
+  font-weight: 600;
+  margin: 0;
+  margin-top: var(--spacer);
+  margin-bottom: var(--spacer-sm);
+}
+
+.services ul {
+  line-height: 1.4;
+}
 
 /* ============
 
