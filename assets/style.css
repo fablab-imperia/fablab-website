@@ -649,7 +649,7 @@ media queries
 
   .plans .f-row {
     justify-content: center;
-    width: min(80%, 700px);
+    width: min(80%, 800px);
     gap: 2em;
     margin: 0 auto;
   }
