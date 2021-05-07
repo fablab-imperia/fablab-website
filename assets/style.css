@@ -608,6 +608,10 @@ media queries
 
 @media screen and (min-width: 700px) {
 
+  html {
+    scroll-padding-top: 6em;
+  }
+
   .hero {
     background: 
     var(--clr-hero-grad-brk),
