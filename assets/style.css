@@ -5,7 +5,6 @@
 1. global styles
 2. global typography
 3. components 
-    3.1 buttons
 4. sections
 5. media queries
 */
@@ -40,7 +39,7 @@ global styles
     --ff-h: 'Montserrat', sans-serif;
     --ff-p: 'Open Sans', sans-serif;
 
-    /* font sizes */
+    /* font sizes relative to default browser rem (usually 16px) */
     --fs-h1: 2.375rem;
     --fs-h2: 2rem;
     --fs-h3: 1.75rem;
@@ -224,16 +223,11 @@ components
   transform: rotate(180deg); */
   /* aspect-ratio: 1 / 1; */
 }
-
-
-
 /* == blob decoration method 2: drop shadow effect on clippath container */
-
 /* .blob-container img {
   margin-bottom: var(--spacer);
   filter: drop-shadow(2vw 2vw 0px var(--clr-second-500-bg));  
 } */
-
 /* == blob decoration method 3: insert svg in html and place both imgs on top of each other with position absolute
       discarded because position absolute messes up the layout */
 
@@ -471,8 +465,9 @@ courses
 
 .courses__list {
   font-family: var(--ff-h);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--clr-second-700);
+  padding-bottom: var(--spacer-md);
 }
 
 
