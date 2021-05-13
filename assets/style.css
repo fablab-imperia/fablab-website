@@ -34,6 +34,7 @@ global styles
     --clr-third-500: hsl(359, 47%, 59%);
     --clr-hero-grad: linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 25%, rgba(49, 81, 111, 0.54) 55%, rgba(154, 170, 184, 0.311182) 82%, rgba(255, 255, 255, 0) 100%);
     --clr-hero-grad-brk: linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 20.14%, rgba(49, 81, 111, 0.54) 38.9%, rgba(154, 170, 184, 0.311182) 56.2%, rgba(255, 255, 255, 0) 100%);
+    --clr-supportersbg-500: #1f252b;
     --clr-footerbg-500: #032340;
 
     /* font families */
@@ -613,6 +614,37 @@ footer
 
 /* ============
 
+supporters
+
+============ */
+
+
+.supporters {
+  background-color: var(--clr-supportersbg-500);
+}
+
+.supporters h1, h2 {
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: var(--spacer);
+}
+
+.supporters .f-col {
+  max-width: 200px;
+}
+
+.supporters .f-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: var(--spacer-md);
+  margin: 0 auto;
+}
+
+
+/* ============
+
 media queries
 
 ============ */
@@ -672,6 +704,7 @@ media queries
     gap: 2em;
     margin: 0 auto;
   }
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -697,8 +730,9 @@ media queries
     }
     
     nav ul {
-      width: 100%;
       display: flex;
+      width: 100%;
+      gap: var(--spacer);
       justify-content: space-between;
     }
     
