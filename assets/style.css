@@ -718,6 +718,10 @@ footer
   content: '\f05a';
 }
 
+.footer__contacts .youtube::marker {
+  content: '\f167';
+}
+
 .footer__contacts .facebook::marker {
   content: '\f39e';
 }
@@ -733,6 +737,14 @@ footer
 .footer__contacts .mobile::marker {
   font-family: 'Font Awesome 5 Free';
   content: '\f095';
+}
+
+.footer__contacts .github::marker {
+  content: '\f09b';
+}
+
+.footer__contacts .pinterest::marker {
+  content: '\f0d2';
 }
 
 .footer__contacts .email::marker {
