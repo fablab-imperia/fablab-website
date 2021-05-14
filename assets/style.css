@@ -89,7 +89,6 @@ img {
 }
 
 .wrapper {
-  position: relative;
   width: min(90%, var(--wrapper-maxwidth));
   margin: 0 auto;
 }
@@ -661,6 +660,10 @@ footer
 
 .footer {
   background-color: var(--clr-footerbg-500);  
+}
+
+.footer .wrapper {
+  position: relative;
 }
 
 
