@@ -34,7 +34,7 @@ global styles
     --clr-third-500: hsl(359, 47%, 59%);
     --clr-hero-grad: linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 25%, rgba(49, 81, 111, 0.54) 55%, rgba(154, 170, 184, 0.311182) 82%, rgba(255, 255, 255, 0) 100%);
     --clr-hero-grad-brk: linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 20.14%, rgba(49, 81, 111, 0.54) 38.9%, rgba(154, 170, 184, 0.311182) 56.2%, rgba(255, 255, 255, 0) 100%);
-    --clr-supportersbg-500: #1f252b;
+    --clr-partnersbg-500: #1f252b;
     --clr-contacts-500: rgb(85, 179, 226);
     --clr-footerbg-500: #032340;
 
@@ -89,6 +89,7 @@ img {
 }
 
 .wrapper {
+  position: relative;
   width: min(90%, var(--wrapper-maxwidth));
   margin: 0 auto;
 }
@@ -193,7 +194,8 @@ components
 .btn:hover
  {
   transform: scale(0.98);
-  background: var(--clr-second-500);  
+  background: var(--clr-second-500);
+  opacity: 0.75;
 }
 
 .blob1 {
@@ -236,6 +238,15 @@ components
       discarded because position absolute messes up the layout */
 
 
+.map {
+  border-radius: 10px;
+  margin-top: var(--spacer);
+  margin-bottom: var(--spacer);
+  width: 100%;
+  min-height: 300px;
+  justify-self: center;
+
+}
 
 /* ============
 
@@ -603,33 +614,42 @@ events
 
 /* ============
 
-supporters
+partners
 
 ============ */
 
 
-.supporters {
-  background-color: var(--clr-supportersbg-500);
+.partners {
+  background-color: var(--clr-partnersbg-500);
+  padding-top: var(--spacer-md);
+  padding-bottom: var(--spacer-md);
 }
 
-.supporters h1 {
+.partners h1 {
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   margin-bottom: var(--spacer);
 }
 
-.supporters .f-col {
-  max-width: 200px;
-}
-
-.supporters .f-row {
+.partners .f-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  gap: var(--spacer-md);
+  gap: var(--spacer);
   margin: 0 auto;
 }
+
+.partners .f-col {
+  max-width: 200px;
+  justify-self: center;
+  text-align: center;
+}
+
+.partners img {
+  max-height: 100px;
+}
+
 
 
 /* ============
@@ -649,6 +669,17 @@ footer
   max-width: 100px;
 }
 
+
+.footer p {
+  color: cornflowerblue;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  width: 90%;
+  margin: 0;
+  padding-top: var(--spacer);
+  padding-bottom: var(--spacer);
+}
+
 .footer h3 {
   color: var(--clr-second-500);
 }
@@ -657,6 +688,7 @@ footer
   padding-left: 1.3rem;     /* to make ul horizontally aligned */
   padding-bottom: var(--spacer); 
   line-height: 1.7;
+  font-size: 0.82rem;
 }
 
 .footer li {
@@ -670,6 +702,17 @@ footer
   font-weight: 700;
   color: var(--clr-second-500);
   text-align: center;
+}
+
+.footer__location {
+  line-height: 1.2;
+  max-width: 60ch;
+  margin-bottom: var(--spacer);
+}
+
+.footer__contacts .footer__location::marker {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f05a';
 }
 
 .footer__contacts .facebook::marker {
@@ -694,25 +737,22 @@ footer
   content: '\f1fa';
 }
 
-.footer__final {
-  display: block;
-  bottom: 0;
-  height: var(--navbar-height);
+.footer__info {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: var(--spacer-lg);
   width: 100%;
-  background-color: var(--clr-supportersbg-500);
-  color: cornflowerblue;
-  text-align: left;
+  background-color: var(--clr-partnersbg-500);
+}
+
+.footer__info p {
+  text-align: center;
 
 }
 
-.map {
-  border-radius: 10px;
-  margin-top: var(--spacer);
-  margin-bottom: var(--spacer);
-  width: 80%;
-  justify-self: center;
-}
+
 
 /* ============
 
@@ -772,8 +812,16 @@ media queries
   .plans .f-row {
     justify-content: center;
     width: min(80%, 800px);
-    gap: 2em;
+    gap: var(--spacer-md);
     margin: 0 auto;
+  }
+
+  .plans .f-col {
+    width: 100%;
+  }
+
+  .partners f-row {
+    gap: var(--spacer-md);
   }
 
 }
@@ -836,4 +884,9 @@ media queries
     nav a:focus::before {
       transform: scale(1,1);
     }
+
+    .plans .f-row {
+      gap: var(--spacer-xlg);
+    }
+  
   }
