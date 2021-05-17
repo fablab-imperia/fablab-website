@@ -167,6 +167,11 @@ p {
   line-height: 1.2;
 }
 
+.caption__title {
+  font-weight: bold;
+  color: var(--clr-first-500);
+}
+
 
 /* ============
 
@@ -489,9 +494,24 @@ services
   padding-top: var(--spacer-md);
 }
 
-.services ::marker {
-  color: var(--clr-second-700);
+.services ul {
+  line-height: 1.4;
+  padding-left: 0.7rem; /* marker distancing */
 }
+
+.services ul ::marker {
+  font-family: 'Font Awesome 5 Free';
+  color: var(--clr-second-700);
+  font-size: 0.8em;
+  font-weight: 700;
+  content: '\f00c';
+}
+
+.services ul li {
+  padding-left: 0.4em; /* marker distancing */
+}
+
+
 
 .services .f-col__imgs p {
   font-family: var(--ff-h);
@@ -501,9 +521,8 @@ services
   margin-bottom: var(--spacer-sm);
 }
 
-.services ul {
-  line-height: 1.4;
-}
+
+
 
 /* ============
 
