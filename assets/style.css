@@ -46,7 +46,7 @@ global styles
     --fs-h1: 2.375rem;
     --fs-h2: 2rem;
     --fs-h3: 1.75rem;
-    --fs-h4: 1.2rem;
+    --fs-top-title: 1.2rem;
     --fs-p: 1.0625rem;
     --fs-btn: 0.875rem;
 
@@ -140,9 +140,9 @@ h3 {
   margin-bottom: var(--spacer);
 }
 
-h4 {
+top-title {
   font-family: var(--ff-p);
-  font-size: var(--fs-h4);
+  font-size: var(--fs-top-title);
   color: var(--clr-second-700);
   margin-top: var(--spacer-md);
 }
@@ -865,7 +865,7 @@ media queries
     scroll-padding-top: 6em;
   }
 
-  h4 {
+  .top-title {
     margin-top: 0;
   }
 
