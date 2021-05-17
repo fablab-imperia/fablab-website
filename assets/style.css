@@ -813,6 +813,7 @@ footer
   margin: 0 auto;
   justify-content: space-between;
   padding: var(--spacer);
+  flex-wrap: wrap;
   
 }
 
