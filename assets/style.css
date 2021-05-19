@@ -264,13 +264,13 @@ components
   content: "";
   background: var(--clr-second-500-bg);
   position: absolute;
-  top: 5px;
-  left: -8px;
+  top: 0px;
+  left: -15px;
   width: 108%;
   height: 102%;
   clip-path: url(#blob1-clip);
-  /* transform-origin: center;
-  transform: rotate(180deg); */
+  transform-origin: center;
+  transform: rotate(-8deg);
   /* aspect-ratio: 1 / 1; */
 }
 /* == blob decoration method 2: drop shadow effect on clippath container */
