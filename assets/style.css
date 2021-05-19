@@ -114,6 +114,10 @@ strong {
   font-weight: bold;
 }
 
+em {
+  font-style: italic;
+}
+
 h1, h2 {
   font-family: var(--ff-h);
   font-weight: bold;
@@ -408,9 +412,7 @@ hero
 ============ */
 
 .hero {
-  background: 
-  var(--clr-hero-grad),
-  url(/assets/imgs/IMG_20170604_155258\ crop2.jpg);
+  background: var(--clr-hero-grad), url(/assets/imgs/IMG_20170604_155258\ crop2.jpg);
   background-size: cover;
   background-position: top left 40%;
   background-repeat: no-repeat;
@@ -420,12 +422,11 @@ hero
 }
 
 .hero__coderdojo {
-  background: 
-  var(--clr-hero-grad),
-  url(/assets/imgs/IMG_1209-1.jpg);
-  background-size: cover;
-
+  background: url(/assets/imgs/banner2.jpg);
+  background-size:cover;
+  background-position: top center;
   background-repeat: no-repeat;
+  height: 50vw;
 }
 
 .hero .wrapper {
@@ -888,15 +889,6 @@ media queries
     background-repeat: no-repeat;
   }
 
-  .hero__coderdojo {
-    background: 
-    var(--clr-hero-grad-brk),
-    url(/assets/imgs/IMG_1209-1.jpg);
-    background-size: cover;
-    background-position: center left 40%;
-    background-repeat: no-repeat;
-  }
-
   .f-row {
     display: flex;
     gap: 2em;
@@ -919,7 +911,8 @@ media queries
   }
 
   .laboratory .f-row,
-  .courses .f-row {
+  .courses .f-row,
+  .subsection2 .f-row {
     flex-direction: row-reverse;
   }
 
