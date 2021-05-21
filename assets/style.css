@@ -444,11 +444,18 @@ hero
 }
 
 .hero__coderdojo {
+  position: relative;
   background: url(/assets/imgs/banner2.jpg);
   background-size:cover;
   background-position: top center;
   background-repeat: no-repeat;
-  height: 50vw;
+  min-height: 50vw;
+}
+
+.hero__coderdojo .wave--bottom {   /* TODO not clear why behaves differently than index.html and this is needed here */
+  position: absolute;
+  bottom:0;
+  height: 5em;
 }
 
 .hero .wrapper {
@@ -669,7 +676,7 @@ coderdojo
 
 
 .coderdojo .blob-container::before {
-  background: var(--clr-first-500-bg);
+  background: #5688CB;
 }
 
 
@@ -720,8 +727,8 @@ partners
 
 .partners {
   background-color: var(--clr-partnersbg-500);
-  padding-top: var(--spacer-md);
-  padding-bottom: var(--spacer-md);
+  /* padding-top: var(--spacer-lg);
+  padding-bottom: var(--spacer-lg); */
 }
 
 .partners h1 {
