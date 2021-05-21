@@ -267,7 +267,8 @@ components
   line-height: 50px;
   color: #fff;
 }
-#totopbtn:hover {
+#totopbtn:hover,
+#totopbtn:focus {
   cursor: pointer;
   background-color: #333;
 }
@@ -591,6 +592,11 @@ courses
 plans
 
 ============ */
+
+.plans { 
+  padding-top: var(--spacer);       /* fine tuning space */
+  padding-bottom: var(--spacer-xlg);
+}
 
 
 .plans p {
