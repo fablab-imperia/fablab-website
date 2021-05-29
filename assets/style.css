@@ -255,7 +255,7 @@ components
 .alert-box {
   position: relative;
   background: #FFFFFF;
-  box-shadow: 0px 0px 30px -5px var(--clr-first-500);
+  box-shadow: 0px 0px 20px -3px var(--clr-first-500);
   border-radius: 20px;
   margin: var(--spacer) auto;
   padding: var(--spacer);
@@ -264,7 +264,7 @@ components
 }
 
 .alert-box--error {
-  box-shadow: 0px 0px 30px -5px var(--clr-third-500);
+  box-shadow: 0px 0px 20px -3px var(--clr-third-500);
 }
 
 .alert-box .btn {
