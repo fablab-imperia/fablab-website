@@ -46,6 +46,7 @@ global styles
     --fs-h1: 2.375rem;
     --fs-h2: 2rem;
     --fs-h3: 1.75rem;
+    --fs-h4: 1.75rem;
     --fs-top-title: 1.2rem;
     --fs-p: 1.0625rem;
     --fs-btn: 0.875rem;
@@ -80,11 +81,13 @@ body {
 section {
   padding-top: var(--spacer-lg);
   padding-bottom: var(--spacer-lg);
+  text-align: left;
   /* padding-top: var(--spacer-lg);
   padding-bottom: var(--spacer-lg); */
 }
 
 img {
+  position: relative;   /* to allow z-index to work on imgs */
   max-width: 100%;
 }
 
@@ -139,8 +142,16 @@ h2 {
 h3 {
   font-family: var(--ff-h);
   font-size: var(--fs-h3);
-  font-weight: 00;
+  font-weight: 00;        /* ??? TODO FIXTHIS */
   color: var(--clr-first-500);
+  margin-bottom: var(--spacer);
+}
+
+h4 {
+  font-family: var(--ff-h);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  color: var(--clr-second-700);
   margin-bottom: var(--spacer);
 }
 
@@ -578,20 +589,22 @@ services
 
 ============ */
 
-.services .f-col__txt {
-  text-align: right;
-}
 
-.services .f-sub-row  {
+.services .f-sub-row {
+  text-align: left;
+}
+                    /* TODO MOVE THIS STUFF */
+
+.f-sub-row  {
   display: flex;
   gap: 20px;
 }
-.services .f-sub-row .f-col {
+.f-sub-row .f-col {
   width: 50%;
-  z-index: 1;       /* to stay on top of blob */
+  z-index: 2;       /* to stay on top of blob */
 }
 
-.services .f-col__imgs div:nth-of-type(2) {   /* moves second subcolumns a bit lower for design  */
+.f-col__imgs div:nth-of-type(2) {   /* moves second subcolumns a bit lower for design  */
   padding-top: var(--spacer-md);
 }
 
@@ -612,7 +625,7 @@ services
   padding-left: 0.4em; /* marker distancing */
 }
 
-.services .f-col__imgs p {
+.f-col__imgs p {
   font-family: var(--ff-h);
   font-weight: 600;
   margin: 0;
@@ -738,10 +751,12 @@ coderdojo
 
 ============ */
 
+        
 
-.whatiscoderdojo {
+.whatiscoderdojo,       /* TODO FIX THIS MESS WITH UNIQUE CLASSES */
+.whatdowedoatcoderdojo,
+.howtojoinus {
   position: relative;
-  text-align: right;
   padding: unset;
   overflow: hidden;
   background-image:
@@ -752,12 +767,30 @@ coderdojo
   background-blend-mode:screen;
   /* z-index: 0; */
 }
-
-.whatiscoderdojo .f-row:nth-of-type(1) {
+                                        /* TODO FIX THIS MESS WITH UNIQUE CLASSES */
+.whatiscoderdojo .f-row:nth-of-type(1),
+.whatdowedoatcoderdojo .f-row:nth-of-type(1),
+.howtojoinus .f-row:nth-of-type(1) {
   padding-bottom: var(--spacer-xlg);
 }
 
-  /* filter: sepia(100%) saturate(300%) contrast(80%) brightness(550%) hue-rotate(180deg); */
+.whatdowedoatcoderdojo .f-sub-row {
+  /* border: solid 1px red; */
+  justify-content: stretch;
+}
+
+.whatdowedoatcoderdojo .f-col:nth-of-type(2) {
+  position: relative;
+  right: 0;
+  padding-top: var(--spacer-xlg);
+  margin-left: -20px;
+}
+
+.seeourworks {
+  text-align: center;
+  padding-bottom: var(--spacer-xlg);
+}
+
 
 /* ============
 
@@ -992,6 +1025,10 @@ media queries
     scroll-padding-top: 6em;
   }
 
+  section {
+    /* text-align: right; */    /* TODO FIX THIS */
+  }
+
   .top-title {
     margin-top: 0;
   }
@@ -1025,13 +1062,21 @@ media queries
     align-self: center;   /* centers txt block vertically */
     width: 50%;
   }
-
+                          /* TODO FIX ALL THIS MESS WITH A SINGLE/COUPLE OF CLASSES */
   .laboratory .f-row,
   .courses .f-row,
-  .subsection2 .f-row,
-  .whatiscoderdojo .f-row:nth-of-type(2) {
+  .whatiscoderdojo .f-row:nth-of-type(2),
+  .whatdowedoatcoderdojo .f-row:nth-of-type(2),
+  .coderdojocompetitions .f-row:nth-of-type(1)
+   {
     flex-direction: row-reverse;
     text-align: left;
+    }
+  
+  .whycoderdojo,
+  .whatdowedoatcoderdojo,
+  .whatiscoderdojo {
+    text-align: right;
   }
 
   .plans h1 {
