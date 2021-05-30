@@ -152,6 +152,7 @@ h4 {
   font-size: var(--fs-h4);
   font-weight: 700;
   color: var(--clr-second-700);
+  margin-top: var(--spacer);
   margin-bottom: var(--spacer);
 }
 
@@ -791,6 +792,10 @@ coderdojo
   padding-bottom: var(--spacer-xlg);
 }
 
+.coderdojo-rules {
+  position: relative;
+  list-style: disc;
+}
 
 /* ============
 
@@ -1058,6 +1063,11 @@ media queries
     align-self: center;
   }
 
+
+  .f-col__imgs--big {
+    width: 45%; 
+  }
+
   .f-col__txt {
     align-self: center;   /* centers txt block vertically */
     width: 50%;
@@ -1066,7 +1076,7 @@ media queries
   .laboratory .f-row,
   .courses .f-row,
   .whatiscoderdojo .f-row:nth-of-type(2),
-  .whatdowedoatcoderdojo .f-row:nth-of-type(2),
+  .whatdowedoatcoderdojo .f-row:nth-of-type(1),
   .coderdojocompetitions .f-row:nth-of-type(1)
    {
     flex-direction: row-reverse;
