@@ -122,6 +122,11 @@ a {
   color: var(--clr-link);
 }
 
+p a {
+  text-decoration: underline;
+  color: green;
+}
+
 strong {
   font-weight: bold;
 }
@@ -215,6 +220,28 @@ p {
 components
 
 ============ */
+
+
+.f-sub-row  {
+  display: flex;
+  gap: 20px;
+  /* min-height: 25vw; */
+  max-height: 300px;
+}
+
+.f-sub-row .f-col {
+  width: 50%;
+  z-index: 2;       /* to stay on top of blob */
+}
+
+.f-col__imgs div:nth-of-type(2) {   /* moves second subcolumns a bit lower for design  */
+  padding-top: var(--spacer-md);
+}
+
+.f-col__imgs--big {
+  width: 90%;
+  margin: 0 auto;
+}
 
 .wave {
   display: block;   /* to avoid gap between separator and parent div */
@@ -611,38 +638,26 @@ services
 .services .f-sub-row {
   text-align: left;
 }
-                    /* TODO MOVE THIS STUFF */
 
-.f-sub-row  {
-  display: flex;
-  gap: 20px;
-  /* min-height: 25vw; */
-  max-height: 300px;
-}
-
-.f-sub-row .f-col {
-  width: 50%;
-  z-index: 2;       /* to stay on top of blob */
-}
-
-.f-col__imgs div:nth-of-type(2) {   /* moves second subcolumns a bit lower for design  */
-  padding-top: var(--spacer-md);
-}
-
-.services ul {
+.services ul,         /* TODO FIX THIS move this stuff */
+.howtojoinus ul {
+  position: relative;
   line-height: 1.4;
   padding-left: 0.7rem; /* marker distancing */
+  padding-bottom: var(--spacer); /* marker distancing */
 }
 
-.services ul ::marker {
+.services ul ::marker,
+.howtojoinus ul ::marker {
   font-family: 'Font Awesome 5 Free';
   color: var(--clr-second-700);
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: 700;
   content: '\f00c';
 }
 
-.services ul li {
+.services ul li,
+.howtojoinus ul li {
   padding-left: 0.4em; /* marker distancing */
 }
 
@@ -790,8 +805,7 @@ coderdojo
 }
                                         /* TODO FIX THIS MESS WITH UNIQUE CLASSES */
 .whatiscoderdojo .f-row:nth-of-type(1),
-.whatdowedoatcoderdojo .f-row:nth-of-type(1),
-.howtojoinus .f-row:nth-of-type(1) {
+.whatdowedoatcoderdojo .f-row:nth-of-type(1) {
   padding-bottom: var(--spacer-xlg);
 }
 
@@ -831,16 +845,27 @@ max-width: unset;
 width: 120%;
 }
 
-
-
 .seeourworks {
   text-align: center;
   padding-bottom: var(--spacer-xlg);
 }
 
+.seeourworks h1 {
+  padding: var(--spacer-md);
+}
+
+.seeourworks img {
+  max-width: 250px;
+  border-radius: 20px;
+}
+
 .coderdojo-rules {
   position: relative;
   list-style: disc;
+}
+
+.howtojoinus {
+  padding-bottom: var(--spacer-md);
 }
 
 /* ============
