@@ -369,6 +369,10 @@ components
 
 .blob-container--alternate::before {
   background: #5688CB;
+  top: -5px;
+  left: -8px;
+  width: 106%;
+  transform: rotate(-180deg);
 }
 
 /* == blob decoration method 2: drop shadow effect on clippath container */
