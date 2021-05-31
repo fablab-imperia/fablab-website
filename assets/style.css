@@ -228,13 +228,13 @@ components
 .wave--top {
   transform:rotate(180deg); 
   padding-top: var(--spacer);
-  top:-3px;
+  margin-top: -3px;
 }
 
 .wave--bottom {
   transform:rotate(0deg); 
   padding-top: var(--spacer);
-  bottom: -3px;
+  margin-bottom: -3px;
 }
 
 
@@ -517,9 +517,9 @@ hero
   position: relative;
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.562952) 24.71%, rgba(255, 255, 255, 0) 100%), url(/assets/imgs/IMG_3716.JPG);
   background-size:cover;
-  background-position: top center;
+  background-position: top 25% center;
   background-repeat: no-repeat;
-  min-height: 50vw;
+  height: max(38vw, 40vh);
 }
 
 .hero__coderdojo .wave--bottom {   /* TODO not clear why behaves differently than index.html and this is needed here */
@@ -609,6 +609,7 @@ services
   display: flex;
   gap: 20px;
   min-height: 25vw;
+  max-height: 300px;
 }
 
 .f-sub-row .f-col {
@@ -772,7 +773,7 @@ coderdojo
   padding: unset;
   overflow: hidden;
   background-image:
-  linear-gradient( hsl(185, 84%, 89%), hsl(185, 84%, 89%)),
+  linear-gradient( hsl(185, 100%, 91%), hsl(185, 100%, 91%)),
   url(/assets/imgs/coder-dojo-header_v2bg\ bn.jpg);
   background-size: cover;
   background-position: center;
