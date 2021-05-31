@@ -22,7 +22,7 @@ global styles
 :root {
   /* colors   */
   --clr-bodybg-500: hsl(0, 0%, 98%);
-    --clr-navbg-500: rgba(86, 136, 203,50%);
+    --clr-navbg-500: rgba(86, 136, 203,70%);
     --clr-default-500: hsl(0, 0%, 0%);
     --clr-herotitle-500: hsl(0, 0%, 100%);
     --clr-fgnavbar-500: hsl(0, 0%, 100%);
@@ -255,13 +255,13 @@ components
 .wave--top {
   transform:rotate(180deg); 
   padding-top: var(--spacer);
-  margin-top: -3px;
+  top: -3px;
 }
 
 .wave--bottom {
   transform:rotate(0deg); 
   padding-top: var(--spacer);
-  margin-bottom: -3px;
+  bottom: -3px;
 }
 
 
@@ -516,7 +516,7 @@ nav {                             /* navigation menu */
 
 nav a:hover,
 nav a:focus {
-    color: var(--clr-second-500);
+    color: var(--clr-herotitle-500);
  }
 
 nav li {
@@ -826,10 +826,10 @@ coderdojo
 }
 
 .whatdowedoatcoderdojo .f-col:nth-of-type(1) img {
-position: relative;
-left: 0;
-max-width: unset;
-width: 120%;
+  position: relative;
+  left: 0;
+  max-width: unset;
+  width: 120%;
 }
 
 .whatdowedoatcoderdojo .f-col:nth-of-type(2) {
@@ -855,7 +855,7 @@ width: 120%;
 }
 
 .seeourworks img {
-  max-width: 250px;
+  max-width: 200px;
   border-radius: 20px;
 }
 
@@ -865,7 +865,7 @@ width: 120%;
 }
 
 .howtojoinus {
-  padding-bottom: var(--spacer-md);
+  padding-bottom: var(--spacer-lg);
 }
 
 /* ============
@@ -1227,7 +1227,7 @@ media queries
       content: '';
       display: block;
       height: 2px;
-      background: var(--clr-second-500);
+      background: var(--clr-second-700);
       position: absolute;
       bottom: -.75em;
       left: 0;
