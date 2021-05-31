@@ -282,6 +282,7 @@ components
   padding: var(--spacer);
   text-align: center;
   width: 80%;
+  margin-bottom: 0;
 }
 
 .alert-box--error {
@@ -608,7 +609,7 @@ services
 .f-sub-row  {
   display: flex;
   gap: 20px;
-  min-height: 25vw;
+  /* min-height: 25vw; */
   max-height: 300px;
 }
 
@@ -813,7 +814,7 @@ width: 120%;
 .whatdowedoatcoderdojo .f-col:nth-of-type(2) {
   position: relative;
   padding-top: var(--spacer-xlg);
-  padding-bottom: calc(var(--spacer-xlg) * 1.8);
+  
 }
 
 .whatdowedoatcoderdojo .f-col:nth-of-type(2) img {
