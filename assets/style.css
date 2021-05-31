@@ -96,6 +96,15 @@ img {
   margin: 0 auto;
 }
 
+.f-row--wrapped {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: var(--spacer);
+  margin: 0 auto;
+}
+
 /* .f-col {
   align-self: flex-start;
 }
@@ -599,7 +608,9 @@ services
 .f-sub-row  {
   display: flex;
   gap: 20px;
+  min-height: 25vw;
 }
+
 .f-sub-row .f-col {
   width: 50%;
   z-index: 2;       /* to stay on top of blob */
@@ -777,15 +788,41 @@ coderdojo
 
 .whatdowedoatcoderdojo .f-sub-row {
   /* border: solid 1px red; */
+  position: relative;
   justify-content: stretch;
+}
+/* 
+.whatdowedoatcoderdojo .f-col {
+  position: relative;
+  width: 50%;
+} */
+
+.whatdowedoatcoderdojo .f-col:nth-of-type(1) {
+  position: relative;
+  padding-bottom: var(--spacer-xlg);
+}
+
+.whatdowedoatcoderdojo .f-col:nth-of-type(1) img {
+position: relative;
+left: 0;
+max-width: unset;
+width: 120%;
 }
 
 .whatdowedoatcoderdojo .f-col:nth-of-type(2) {
   position: relative;
-  right: 0;
   padding-top: var(--spacer-xlg);
-  margin-left: -20px;
+  padding-bottom: calc(var(--spacer-xlg) * 1.8);
 }
+
+.whatdowedoatcoderdojo .f-col:nth-of-type(2) img {
+position: absolute;
+right: 0;
+max-width: unset;
+width: 120%;
+}
+
+
 
 .seeourworks {
   text-align: center;
@@ -851,15 +888,6 @@ partners
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   margin-bottom: var(--spacer);
-}
-
-.partners .f-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: var(--spacer);
-  margin: 0 auto;
 }
 
 .partners .f-col {
