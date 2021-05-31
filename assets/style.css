@@ -262,15 +262,14 @@ components
 }
 
 .blob1 {
-  position: absolute;   /* hide SVG from DOM workaround. Do not use display: none */
+  position: absolute;   /* keep this SVG out of DOM. Do not use display: none */
   width: 0;
   height: 0;
 }
 
-.blob1__img {
+.blob1__img {          /* shapes the img frame */
   clip-path: url(#blob1-clip);
   object-fit: cover;
-  
 }
 
 .alert-box {
@@ -354,8 +353,7 @@ components
   max-width: 80%;
 }
 
-/* == blob decoration method 1: clippath in the container */
-.blob-container::before {
+.blob-container::before {         /* blob decoration */
   content: "";
   background: var(--clr-second-500-bg);
   position: absolute;
@@ -368,6 +366,11 @@ components
   transform: rotate(-8deg);
   /* aspect-ratio: 1 / 1; */
 }
+
+.blob-container--alternate::before {
+  background: #5688CB;
+}
+
 /* == blob decoration method 2: drop shadow effect on clippath container */
 /* .blob-container img {
   margin-bottom: var(--spacer);
