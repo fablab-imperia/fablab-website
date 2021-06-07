@@ -221,13 +221,43 @@ components
 
 ============ */
 
+.boxed-section {
+  position: relative;
+  background: var(--clr-first-500-bg);
+  z-index: 0;
+  padding-top: unset;
+  padding-bottom: unset;
+}
+
+.boxed-section--coderdojo {
+  position: relative;
+  padding: unset;
+  overflow: hidden;
+  background-image:
+  linear-gradient( hsl(185, 100%, 91%), hsl(185, 100%, 91%)),
+  url(/assets/imgs/coder-dojo-header_v2bg\ bn.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode:screen;
+  /* z-index: 0; */
+}
+
+.boxed-section--coderdojo .f-row:nth-of-type(1) {
+  padding-bottom: var(--spacer-xlg);
+}
 
 .f-sub-row  {
   display: flex;
   gap: 20px;
+  text-align: left;
   /* min-height: 25vw; */
   max-height: 300px;
 }
+/* 
+.f-sub-row {
+  text-align: left;
+} */
+
 
 .f-sub-row .f-col {
   width: 50%;
@@ -236,6 +266,35 @@ components
 
 .f-col__imgs div:nth-of-type(2) {   /* moves second subcolumns a bit lower for design  */
   padding-top: var(--spacer-md);
+}
+
+.f-col__imgs p {
+  font-family: var(--ff-h);
+  font-weight: 600;
+  margin: 0;
+  margin-top: var(--spacer);
+  margin-bottom: var(--spacer-sm);
+}
+
+.f-col__imgs--stacked .f-col:nth-of-type(1) {      /* COUPLED&STACKED IMAGES */
+  position: relative;
+  padding-bottom: var(--spacer-xlg);
+}
+.f-col__imgs--stacked .f-col:nth-of-type(1) img {
+  position: relative;
+  left: 0;
+  max-width: unset;
+  width: 120%;
+}
+.f-col__imgs--stacked .f-col:nth-of-type(2) {
+  position: relative;
+  padding-top: var(--spacer-xlg);
+}
+.f-col__imgs--stacked .f-col:nth-of-type(2) img {
+  position: absolute;
+  right: 0;
+  max-width: unset;
+  width: 120%;
 }
 
 .f-col__imgs--big {
@@ -297,6 +356,25 @@ components
 .blob1__img {          /* shapes the img frame */
   clip-path: url(#blob1-clip);
   object-fit: cover;
+}
+
+.checked-list {
+  position: relative;
+  line-height: 1.4;
+  padding-left: 0.7rem; /* marker distancing */
+  padding-bottom: var(--spacer); /* marker distancing */
+}
+
+.checked-list ::marker {
+  font-family: 'Font Awesome 5 Free';
+  color: var(--clr-second-700);
+  font-size: 1em;
+  font-weight: 700;
+  content: '\f00c';
+}
+
+.checked-list li {
+  padding-left: 0.4em; /* marker distancing */
 }
 
 .alert-box {
@@ -557,7 +635,18 @@ hero
   height: max(38vw, 40vh);
 }
 
-.hero__coderdojo .wave--bottom {   /* TODO not clear why behaves differently than index.html and this is needed here */
+.hero__organization {
+  position: relative;
+  background: url(/assets/imgs/IMG_2880cropped.jpg);
+  background-size:cover;
+  background-position: top 25% center;
+  background-repeat: no-repeat;
+  height: max(38vw, 40vh);
+  text-align: center;
+}
+
+.hero__coderdojo .wave--bottom,
+.hero__organization .wave--bottom {   /* TODO not clear why behaves differently than index.html and this is needed here */
   position: absolute;
   bottom:0;
   height: 5em;
@@ -635,61 +724,16 @@ services
 ============ */
 
 
-.services .f-sub-row {
-  text-align: left;
-}
-
-.services ul,         /* TODO FIX THIS move this stuff */
-.howtojoinus ul {
-  position: relative;
-  line-height: 1.4;
-  padding-left: 0.7rem; /* marker distancing */
-  padding-bottom: var(--spacer); /* marker distancing */
-}
-
-.services ul ::marker,
-.howtojoinus ul ::marker {
-  font-family: 'Font Awesome 5 Free';
-  color: var(--clr-second-700);
-  font-size: 1em;
-  font-weight: 700;
-  content: '\f00c';
-}
-
-.services ul li,
-.howtojoinus ul li {
-  padding-left: 0.4em; /* marker distancing */
-}
-
-.f-col__imgs p {
-  font-family: var(--ff-h);
-  font-weight: 600;
-  margin: 0;
-  margin-top: var(--spacer);
-  margin-bottom: var(--spacer-sm);
-}
-
-
-
-
 /* ============
 
 courses
 
 ============ */
 
-.courses {
-  position: relative;
-  background: var(--clr-first-500-bg);
-  z-index: 0;
-  padding-top: unset;
-  padding-bottom: unset;
-}
-
 .courses__list {
   font-family: var(--ff-h);
   font-weight: 600;
-  color: var(--clr-second-700);
+  color: var(--clr-first-500);
   padding-bottom: var(--spacer-md);
 }
 
@@ -723,7 +767,7 @@ plans
 }
 
 
-.plans__rectangle {  
+.plans__card {  
   position: relative; /* to allow button to be pos. absolute */
   padding: 1.2rem;
   padding-bottom: calc(3.5em + var(--spacer));  /* to allow space for btn on bottom */
@@ -734,25 +778,25 @@ plans
   margin-top: var(--spacer);
 }
 
-.plans__rectangle--members {
+.plans__card--members {
   background: var(--clr-second-500-bg);
 }
 
-.plans__rectangle--public {
+.plans__card--public {
   background: var(--clr-first-500-bg);
 }
 
-.plans__rectangle--price{
+.plans__card--price{
   font-size: 3.375rem;
   font-weight: 700;
   line-height: 1rem;
 }
 
-.plans__rectangle--highlight {
+.plans__card--highlight {
   color: var(--clr-second-700);
 }
 
-.plans__rectangle--btn {
+.plans__card--btn {
   position: absolute;
   padding-left: var(--spacer);
   padding-right: var(--spacer);
@@ -764,18 +808,18 @@ plans
   text-align: center;
 }
 
-.plans__rectangle ::marker {
+.plans__card ::marker {
   font-family: 'Font Awesome 5 Free';
   font-size: 1em;
   font-weight: 700;
 }
 
-.plans__rectangle .checked::marker {
+.plans__card .checked::marker {
   color: var(--clr-second-700);
   content: '\f058';
 }
 
-.plans__rectangle .unchecked::marker {
+.plans__card .unchecked::marker {
   color: var(--clr-third-500);
   content: '\f05e';
 }
@@ -787,27 +831,6 @@ coderdojo
 
 ============ */
 
-        
-
-.whatiscoderdojo,       /* TODO FIX THIS MESS WITH UNIQUE CLASSES */
-.whatdowedoatcoderdojo,
-.howtojoinus {
-  position: relative;
-  padding: unset;
-  overflow: hidden;
-  background-image:
-  linear-gradient( hsl(185, 100%, 91%), hsl(185, 100%, 91%)),
-  url(/assets/imgs/coder-dojo-header_v2bg\ bn.jpg);
-  background-size: cover;
-  background-position: center;
-  background-blend-mode:screen;
-  /* z-index: 0; */
-}
-                                        /* TODO FIX THIS MESS WITH UNIQUE CLASSES */
-.whatiscoderdojo .f-row:nth-of-type(1),
-.whatdowedoatcoderdojo .f-row:nth-of-type(1) {
-  padding-bottom: var(--spacer-xlg);
-}
 
 .whatdowedoatcoderdojo .f-sub-row {
   /* border: solid 1px red; */
@@ -820,30 +843,7 @@ coderdojo
   width: 50%;
 } */
 
-.whatdowedoatcoderdojo .f-col:nth-of-type(1) {
-  position: relative;
-  padding-bottom: var(--spacer-xlg);
-}
 
-.whatdowedoatcoderdojo .f-col:nth-of-type(1) img {
-  position: relative;
-  left: 0;
-  max-width: unset;
-  width: 120%;
-}
-
-.whatdowedoatcoderdojo .f-col:nth-of-type(2) {
-  position: relative;
-  padding-top: var(--spacer-xlg);
-  
-}
-
-.whatdowedoatcoderdojo .f-col:nth-of-type(2) img {
-position: absolute;
-right: 0;
-max-width: unset;
-width: 120%;
-}
 
 .seeourworks {
   text-align: center;
@@ -1116,7 +1116,7 @@ media queries
     }
 
   .f-col {
-    width: 100%;    /* generale use flex columns equal in width */
+    width: 100%;    /* general use flex columns equal in width */
   }
 
   .f-col__imgs {
@@ -1133,22 +1133,16 @@ media queries
   .f-col__txt {
     align-self: center;   /* centers txt block vertically */
     width: 50%;
+    text-align: right;
   }
-                          /* TODO FIX ALL THIS MESS WITH A SINGLE/COUPLE OF CLASSES */
-  .laboratory .f-row,
-  .courses .f-row,
-  .whatiscoderdojo .f-row:nth-of-type(2),
-  .whatdowedoatcoderdojo .f-row:nth-of-type(1),
-  .coderdojocompetitions .f-row:nth-of-type(1)
-   {
+  
+  .f-row--reverse   {
     flex-direction: row-reverse;
     text-align: left;
-    }
-  
-  .whycoderdojo,
-  .whatdowedoatcoderdojo,
-  .whatiscoderdojo {
-    text-align: right;
+  }
+
+  .f-row--reverse .f-col__txt {
+    text-align: left;
   }
 
   .plans h1 {
