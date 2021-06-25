@@ -242,6 +242,19 @@ components
   /* z-index: 0; */
 }
 
+.boxed-section--organization {
+  position: relative;
+  padding: unset;
+  overflow: hidden;
+  background-image:
+  url(/assets/imgs/Fab_Lab_logo.svg);
+  background-color: white;
+  background-size:contain;
+  background-position: center;
+  background-blend-mode:soft-light;
+  /* z-index: 0; */
+}
+
 .boxed-section--coderdojo .f-row:nth-of-type(1) {
   padding-bottom: var(--spacer-xlg);
 }
@@ -456,6 +469,7 @@ components
   align-self: flex-start;   /* ignore flex row height to position pseudo element below img clip-path*/
   margin: 0 auto;   /* only in mobile, to unset in mediaquery */
   max-width: 80%;
+  /* aspect-ratio: 4 / 3; */
 }
 
 .blob-container::before {         /* blob decoration */
@@ -469,7 +483,7 @@ components
   clip-path: url(#blob1-clip);
   transform-origin: center;
   transform: rotate(-8deg);
-  /* aspect-ratio: 1 / 1; */
+
 }
 
 .blob-container--alternate::before {
@@ -637,12 +651,24 @@ hero
 
 .hero__organization {
   position: relative;
-  background: url(/assets/imgs/IMG_2880cropped.jpg);
-  background-size:cover;
-  background-position: top 25% center;
+  background-image: linear-gradient(cyan, grey),url(/assets/imgs/IMG_2880cropped.jpg);
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-position: bottom 60% center;
   background-repeat: no-repeat;
-  height: max(38vw, 40vh);
+  height: max(22vw, 40vh);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero__organization h1 {
+  margin: unset;
+  padding-bottom: var(--spacer-lg);
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: var(--spacer);
 }
 
 .hero__coderdojo .wave--bottom,
@@ -837,13 +863,6 @@ coderdojo
   position: relative;
   justify-content: stretch;
 }
-/* 
-.whatdowedoatcoderdojo .f-col {
-  position: relative;
-  width: 50%;
-} */
-
-
 
 .seeourworks {
   text-align: center;
@@ -867,6 +886,18 @@ coderdojo
 .howtojoinus {
   padding-bottom: var(--spacer-lg);
 }
+
+/* ============
+
+organization
+
+============ */
+
+
+.organization img {
+  width: 100%;
+}
+
 
 /* ============
 
@@ -1133,7 +1164,7 @@ media queries
   .f-col__txt {
     align-self: center;   /* centers txt block vertically */
     width: 50%;
-    text-align: right;
+    /* text-align: right; */
   }
   
   .f-row--reverse   {
