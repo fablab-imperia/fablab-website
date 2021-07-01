@@ -315,6 +315,12 @@ components
   margin: 0 auto;
 }
 
+.f-col__imgs--small {
+  max-width: 150px;
+  margin: 0 auto;
+  margin-bottom: var(--spacer-md);
+}
+
 .wave {
   display: block;   /* to avoid gap between separator and parent div */
   position: relative;
@@ -737,10 +743,13 @@ hero
 
 /* ============
 
-laboratory
+fabcharter
 
 ============ */
 
+.fabcharter p {
+  max-width: 65ch;
+}
 
 
 /* ============
@@ -1011,8 +1020,6 @@ footer
 }
 
 .footer__contacts--social {
-  -webkit-column-count: 2;  /* Chrome/Opera, Safari */
-  -moz-column-count: 2; /* Mozilla Firefox */
   column-count: 2;
 }
 
