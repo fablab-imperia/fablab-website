@@ -660,7 +660,7 @@ hero
   background-image: linear-gradient(cyan, grey),url(/assets/imgs/IMG_2880cropped.jpg);
   background-size: cover;
   background-blend-mode: multiply;
-  background-position: bottom 60% center;
+  background-position: bottom 50% right;
   background-repeat: no-repeat;
   height: max(22vw, 40vh);
   text-align: center;
@@ -681,8 +681,9 @@ hero
 .hero__organization .wave--bottom {   /* TODO not clear why behaves differently than index.html and this is needed here */
   position: absolute;
   bottom:0;
-  height: 5em;
+  height: 8em;
 }
+
 
 .hero__logo--coderdojo {
   padding-top: calc(var(--navbar-height) + var(--spacer));
@@ -1146,6 +1147,11 @@ media queries
     background-position: center left 40%;
     background-repeat: no-repeat;
   }
+
+
+.hero__organization {
+  margin-bottom: var(--spacer-lg);
+}
 
   .f-row {
     display: flex;
