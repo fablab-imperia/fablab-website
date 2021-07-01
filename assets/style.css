@@ -1147,7 +1147,7 @@ footer
 
 .hidden {
     /* opacity: 0; */       /* TODO FIX HERE TO ALLOW TRANSITION */
-    display: none;
+     display: none;
 
 }
 
