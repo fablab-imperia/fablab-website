@@ -1,24 +1,38 @@
-// var onDocumentLoaded = function() {
-//     // var element = document.getElementById('themesel');
-//     // element.addEventListener('click', clickHandler);
-//     window.onscroll s= function() {scrollFunction()};
+const cookieStorage = {
+    getItem: (item) => {
+        const cookies = document.cookie
+            .split(';')
+            .map(cookie => cookie.split('='))
+            .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {});
+        return cookies[item];
+    },
+    setItem: (item, value) => {
+        document.cookie = `${item}=${value};`
+    }
+}
 
-//     // const lab_bg = document.querySelector('.laboratory');
-//     // lab_bg.addEventListener('mouseover', function() {
-//     //   console.log("CIAO");
-//     //   lab_bg.classList.toggle('laboratory-hover');
-//     //   // lab_bg.style.backgroundImage = "url(imgs/IMG_2880cropped2.jpg)";
-//     // })
+const storageType = cookieStorage;
+const consentPropertyName = 'privacy_consent';
+const shouldShowPopup = () => !storageType.getItem(consentPropertyName);
+const saveToStorage = () => storageType.setItem(consentPropertyName, true);
 
-//   };
-  
-  
-//   function scrollFunction() {
-//     window.addEventListener('scroll', function () {
-//       let header = document.querySelector('header');
-//       let windowPosition = window.scrollY > 10;  // > 0 has too much delay when scrolling back to top
-//       header.classList.toggle('navbar-scrolling', windowPosition);
-//     })
-//   }
-  
-//   window.addEventListener('load', onDocumentLoaded);
+window.onload = () => {
+
+    const acceptFn = event => {
+        saveToStorage(storageType);
+        consentPopup.classList.add('hidden');
+        blanketDiv.classList.add('hidden');
+    }
+    const consentPopup = document.getElementById('consent-popup');
+    const blanketDiv = document.getElementById('blanket');
+    const acceptBtn = document.getElementById('accept');
+    acceptBtn.addEventListener('click', acceptFn);
+
+    if (shouldShowPopup(storageType)) {
+        setTimeout(() => {
+            consentPopup.classList.remove('hidden');
+            blanketDiv.classList.remove('hidden');
+        }, 1000);
+    }
+
+};
