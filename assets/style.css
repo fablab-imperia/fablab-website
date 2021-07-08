@@ -28,14 +28,14 @@ global styles
     --clr-fgnavbar-500: hsl(0, 0%, 100%);
     --clr-first-500: hsl(209, 100%, 15%);
     --clr-first-500-bg: #E0EEFF;
-    --clr-second-500: hsl(88, 52%, 58%);
-    --clr-second-700: #56B071; /*  hsl(88, 52%, 40%); */
-    --clr-second-500-bg: rgba(152, 204, 92, 40%);
-    --clr-third-500: hsl(359, 47%, 59%);
+    --clr-second-500: hsl(88, 62%, 58%);
+    --clr-second-700: hsl(88, 92%, 38%); /*  hsl(88, 52%, 40%); */
+    --clr-second-500-bg: #c3f78980;
+    --clr-third-500: hsl(0, 76%, 52%);
     --clr-hero-grad: linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 25%, rgba(49, 81, 111, 0.54) 55%, rgba(154, 170, 184, 0.311182) 82%, rgba(255, 255, 255, 0) 100%);
     --clr-hero-grad-brk: linear-gradient(90deg, #061D32 0.59%, rgba(3, 35, 64, 0.887142) 11.98%, rgba(0, 40, 77, 0.786929) 20.14%, rgba(49, 81, 111, 0.54) 38.9%, rgba(154, 170, 184, 0.311182) 56.2%, rgba(255, 255, 255, 0) 100%);
     --clr-partnersbg-500: #1f252b;
-    --clr-contacts-500: rgb(85, 179, 226);
+    --clr-contacts-500: rgb(94, 201, 255);
     --clr-footerbg-500: #032340;
 
     /* font families */
@@ -46,7 +46,7 @@ global styles
     --fs-h1: 2.375rem;
     --fs-h2: 2rem;
     --fs-h3: 1.75rem;
-    --fs-h4: 1.75rem;
+    --fs-h4: 1.52rem;
     --fs-top-title: 1.2rem;
     --fs-p: 1.0625rem;
     --fs-btn: 0.875rem;
@@ -167,7 +167,7 @@ h4 {
   font-weight: 700;
   color: var(--clr-second-700);
   margin-top: var(--spacer);
-  margin-bottom: var(--spacer);
+  
 }
 
 ul {
@@ -380,7 +380,7 @@ components
 .checked-list {
   position: relative;
   line-height: 1.4;
-  padding-left: 0.7rem; /* marker distancing */
+  padding-left: 1rem; /* marker distancing */
   padding-bottom: var(--spacer); /* marker distancing */
 }
 
@@ -493,7 +493,7 @@ components
 }
 
 .blob-container--alternate::before {
-  background: #5688CB;
+  background: #2865b4;
   top: -5px;
   left: -8px;
   width: 106%;
@@ -637,7 +637,7 @@ hero
 ============ */
 
 .hero {
-  background: var(--clr-hero-grad), url(/assets/imgs/IMG_20170604_155258\ crop2.jpg);
+  background: var(--clr-hero-grad), url(/assets/imgs/IMG_20170604_155258\ crop1-min-min.jpg);
   background-size: cover;
   background-position: top left 40%;
   background-repeat: no-repeat;
@@ -657,7 +657,7 @@ hero
 
 .hero__organization {
   position: relative;
-  background-image: linear-gradient(cyan, grey),url(/assets/imgs/IMG_2880cropped.jpg);
+  background-image: linear-gradient(cyan, grey),url(/assets/imgs/IMG_2880cropped-min.jpg);
   background-size: cover;
   background-blend-mode: multiply;
   background-position: bottom 50% right;
