@@ -430,17 +430,49 @@ components
   width: 20%;
 }
 
+.scrollToTopBtn {
+  background-color: black;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 48px;
+  width: 48px;
+  
+  /* place it at the bottom right corner */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  /* keep it at the top of everything else */
+  z-index: 100;
+  /* hide with opacity */
+  opacity: 0;
+  /* also add a translate effect */
+  transform: translateY(100px);
+  /* and a transition */
+  transition: all .5s ease
+}
+    
+.showBtn {
+  opacity: 1;
+  transform: translateY(0)
+}
+
 #totopbtn {
   position: fixed;
   display: inline-block;
-  background-color: #FF9800;
+  background-color:var(--clr-second-500);
   width: 50px;
   height: 50px;
   text-align: center;
   border-radius: 4px;
   bottom: 30px;
   right: 30px;
-  transition: background-color .3s, opacity .5s, visibility .5s;
+  transition: transform .5s, background-color .3s, opacity .5s, visibility .5s;
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
   z-index: 1000;
 }
 
@@ -456,15 +488,17 @@ components
 #totopbtn:hover,
 #totopbtn:focus {
   cursor: pointer;
-  background-color: #333;
+  background-color: var(--clr-second-700);
 }
+
 #totopbtn:active {
   background-color: #555;
 }
 
-#totopbtn.show {
+#totopbtn.show {  
   opacity: 1;
-  visibility: visible;
+  visibility: visible;      /* TODO: check if needed */
+  transform: translateY(0)
 }
 
 .blob-container {
@@ -1160,10 +1194,6 @@ media queries
 
   html {
     scroll-padding-top: 6em;
-  }
-
-  section {
-    /* text-align: right; */    /* TODO FIX THIS */
   }
 
   .top-title {
