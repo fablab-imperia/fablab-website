@@ -636,7 +636,7 @@ hero
 
 ============ */
 
-.hero {
+.hero {   /* WARNING change also in media query */
   background: var(--clr-hero-grad), url(/assets/imgs/IMG_20170604_155258\ crop1-min-min.jpg);
   background-size: cover;
   background-position: top left 40%;
