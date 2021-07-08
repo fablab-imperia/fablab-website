@@ -1126,7 +1126,7 @@ footer
   right: 0;
   padding: var(--spacer) var(--spacer-md);
   background-color: rgba(124, 124, 124, 0.534);
-  transition: opacity .5s ease;
+  transition: opacity 1s ease;
   z-index: 888;
 }
 
@@ -1137,7 +1137,8 @@ footer
   right: 0;
   padding: var(--spacer-md) var(--spacer-lg);
   background-color: white;
-  transition: opacity .5s ease;
+  transition: all .5s ease;
+  transform-origin: bottom;
   z-index: 999;
 }
 
@@ -1146,8 +1147,8 @@ footer
 }
 
 .hidden {
-    /* opacity: 0; */       /* TODO FIX HERE TO ALLOW TRANSITION */
-     display: none;
+    opacity: 0;       /* TODO FIX HERE TO ALLOW TRANSITION */
+    transform: scale(1, 0);
 
 }
 
