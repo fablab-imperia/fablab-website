@@ -138,7 +138,7 @@ em {
 h1, h2 {
   font-family: var(--ff-h);
   font-weight: bold;
-  letter-spacing: -1.5;
+/*   letter-spacing: -1.5; */
   color: var(--clr-first-500);
   margin-top: var(--spacer-sm);
   line-height: 1.1;
@@ -156,7 +156,7 @@ h2 {
 h3 {
   font-family: var(--ff-h);
   font-size: var(--fs-h3);
-  font-weight: 00;        /* ??? TODO FIXTHIS */
+  font-weight: 400;        /* ??? TODO FIXTHIS */
   color: var(--clr-first-500);
   margin-bottom: var(--spacer);
 }
@@ -1054,6 +1054,9 @@ footer
 .footer__contacts--social, 
 .courses__list {
   column-count: 2;
+  -webkit-column-gap: var(--spacer-lg); /* Chrome/Opera, Safari */
+  -moz-column-gap: var(--spacer-lg); /* Mozilla Firefox */
+  column-gap: var(--spacer-lg);
 }
 
 .footer li {
