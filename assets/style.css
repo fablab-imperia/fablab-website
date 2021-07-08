@@ -361,9 +361,9 @@ components
 .btn:focus, 
 .btn:hover
  {
-  transform: scale(0.98);
-  background: var(--clr-second-500);
-  opacity: 0.75;
+  transform: scale(0.97);
+  filter: saturate(2);
+  
 }
 
 .blob1 {
@@ -440,10 +440,7 @@ components
   border-radius: 4px;
   bottom: 30px;
   right: 30px;
-  transition: background-color .3s, 
-  opacity .5s, visibility .5s;
-  opacity: 0;
-  visibility: hidden;
+  transition: background-color .3s, opacity .5s, visibility .5s;
   z-index: 1000;
 }
 
