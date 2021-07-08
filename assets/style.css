@@ -235,7 +235,7 @@ components
   overflow: hidden;
   background-image:
   linear-gradient( hsl(185, 100%, 91%), hsl(185, 100%, 91%)),
-  url(/assets/imgs/coder-dojo-header_v2bg\ bn-min.jpg.jpg);
+  url(/assets/imgs/coder-dojo-header_v2bg\ bn-min.jpg);
   background-size: cover;
   background-position: center;
   background-blend-mode:screen;
@@ -679,7 +679,7 @@ hero
 
 .hero__coderdojo {
   position: relative;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.562952) 24.71%, rgba(255, 255, 255, 0) 100%), url(/assets/imgs/IMG_3716.JPG);
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.562952) 24.71%, rgba(255, 255, 255, 0) 100%), url(/assets/imgs/IMG_3716-min.JPG);
   background-size:cover;
   background-position: top 25% center;
   background-repeat: no-repeat;
