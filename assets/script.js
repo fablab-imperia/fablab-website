@@ -35,6 +35,10 @@
     // Finally start observing the target element
     observer.observe(target);
 
+
+
+// privacy consent cookie
+
 const cookieStorage = {
     getItem: (item) => {
         const cookies = document.cookie
@@ -44,7 +48,7 @@ const cookieStorage = {
         return cookies[item];
     },
     setItem: (item, value) => {
-        document.cookie = `${item}=${value};`
+        document.cookie = `${item}=${value}; expires=Fri, 31 Dec 2037 23:59:59 GMT; secure`
     }
 }
 
@@ -53,7 +57,10 @@ const consentPropertyName = 'privacy_consent';
 const shouldShowPopup = () => !storageType.getItem(consentPropertyName);
 const saveToStorage = () => storageType.setItem(consentPropertyName, true);
 
+
 window.onload = () => {
+
+    console.log(document.cookie);
 
     const acceptFn = event => {
         saveToStorage(storageType);
