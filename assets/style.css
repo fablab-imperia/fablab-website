@@ -1083,6 +1083,12 @@ footer
   content: '\f05a';
 }
 
+div.highlight {
+  font-size: 1.2em;
+  text-decoration: underline;
+  color: var(--clr-second-700);
+} 
+
 .footer__contacts .youtube::marker {
   content: '\f167';
 }
@@ -1103,6 +1109,17 @@ footer
   font-family: 'Font Awesome 5 Free';
   content: '\f095';
 }
+
+em.highlight {
+  color:hsl(88, 62%, 58%);
+  text-decoration: underline;
+}
+
+em.highlight {
+  color:hsl(88, 62%, 58%);
+  text-decoration: underline;
+}
+
 
 .footer__contacts .github::marker {
   content: '\f09b';
